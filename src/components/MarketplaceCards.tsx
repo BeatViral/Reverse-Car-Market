@@ -8,13 +8,13 @@ import { ButtonLink } from './Button';
 
 function Chip({ children, tone = 'slate' }: { children: ReactNode; tone?: 'blue' | 'amber' | 'green' | 'slate' | 'dark' }) {
   const tones = {
-    blue: 'bg-blue/10 text-blue',
-    amber: 'bg-amber/15 text-[#8a5a00]',
-    green: 'bg-green/10 text-green',
+    blue: 'bg-blue text-white',
+    amber: 'bg-amber text-navy',
+    green: 'bg-green text-white',
     slate: 'bg-charcoal/5 text-charcoal/75',
     dark: 'bg-navy text-white',
   };
-  return <span className={cx('inline-flex items-center rounded-md px-2.5 py-1 text-xs font-bold', tones[tone])}>{children}</span>;
+  return <span className={cx('inline-flex items-center rounded-md px-2.5 py-1 text-xs font-black', tones[tone])}>{children}</span>;
 }
 
 export function BuyerWantedCardView({
@@ -27,13 +27,14 @@ export function BuyerWantedCardView({
   action?: boolean;
 }) {
   return (
-    <article className="rounded-lg border border-blue/15 bg-white p-5 shadow-soft">
+    <article className="relative overflow-hidden rounded-2xl border-2 border-blue/20 bg-white p-6 shadow-[0_24px_70px_rgba(47,107,255,0.14)]">
+      <div className="absolute inset-x-0 top-0 h-1.5 bg-blue" />
       <div className="flex flex-wrap items-center gap-2">
         <Chip tone="blue">Buyer Wanted</Chip>
         <Chip tone={card.status === 'open' ? 'green' : 'slate'}>{card.status}</Chip>
       </div>
-      <h3 className="mt-4 text-xl font-black leading-snug text-navy">{card.title}</h3>
-      <p className="mt-3 text-sm leading-6 text-charcoal/70">{compact ? card.aiSummary : card.naturalLanguageRequest}</p>
+      <h3 className="mt-5 text-2xl font-black leading-[1.05] text-navy">{card.title}</h3>
+      <p className="mt-4 text-sm font-semibold leading-6 text-charcoal/70">{compact ? card.aiSummary : card.naturalLanguageRequest}</p>
       <div className="mt-5 flex flex-wrap gap-2">
         <Chip>Budget: {card.budgetMax ? `under ${formatCurrency(card.budgetMax, true)}` : 'open'}</Chip>
         <Chip>{card.location ?? 'Any location'}</Chip>
@@ -66,7 +67,8 @@ export function DealerMatchCardView({
 }) {
   const dealer = dealers.find((item) => item.id === card.dealerId);
   return (
-    <article className="rounded-lg border border-amber/30 bg-[#fffbf2] p-5 shadow-soft">
+    <article className="relative overflow-hidden rounded-2xl border-2 border-amber/45 bg-[#fff8ea] p-6 shadow-[0_24px_70px_rgba(245,165,36,0.16)]">
+      <div className="absolute inset-x-0 top-0 h-1.5 bg-amber" />
       <div className="flex flex-wrap items-center gap-2">
         <Chip tone="amber">Dealer Match Card</Chip>
         <Chip tone={dealer?.verifiedStatus === 'verified' ? 'green' : 'slate'}>
@@ -74,8 +76,8 @@ export function DealerMatchCardView({
           {dealer?.verifiedStatus === 'verified' ? 'Verified Dealer' : 'Dealer pending verification'}
         </Chip>
       </div>
-      <h3 className="mt-4 text-xl font-black leading-snug text-navy">{card.title}</h3>
-      <p className="mt-3 text-sm leading-6 text-charcoal/70">{compact ? 'A verified dealer has matching stock available.' : card.description}</p>
+      <h3 className="mt-5 text-2xl font-black leading-[1.05] text-navy">{card.title}</h3>
+      <p className="mt-4 text-sm font-semibold leading-6 text-charcoal/70">{compact ? 'A verified dealer has matching stock available.' : card.description}</p>
       <div className="mt-5 flex flex-wrap gap-2">
         <Chip tone="amber">
           Price: {formatCurrency(card.priceMin, true)}-{formatCurrency(card.priceMax, true)}
@@ -87,7 +89,7 @@ export function DealerMatchCardView({
         <Chip>{card.kmMax ? `Typical km under ${formatNumber(card.kmMax)}` : 'Flexible km'}</Chip>
         <Chip>{card.buyerUseCase}</Chip>
       </div>
-      <p className="mt-4 text-xs font-semibold text-charcoal/60">
+      <p className="mt-5 border-t border-amber/25 pt-4 text-xs font-black uppercase tracking-[0.08em] text-charcoal/62">
         Dealer-created inventory prompt. It is not a Buyer Wanted Card.
       </p>
       {action ? (

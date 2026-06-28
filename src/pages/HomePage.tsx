@@ -1,4 +1,4 @@
-import { ArrowRight, BadgeCheck, Check, CircleDollarSign, Clock, MessageSquare, Search, ShieldCheck, Sparkles, Zap } from 'lucide-react';
+import { ArrowRight, BadgeCheck, Check, MessageSquare, Sparkles, Zap } from 'lucide-react';
 import { ButtonLink } from '../components/Button';
 import { BuyerWantedCardView, DealerMatchCardView } from '../components/MarketplaceCards';
 import { Container } from '../components/Section';
@@ -10,17 +10,10 @@ const steps = [
   ['Compare clearly', 'Price, kilometres, warranty, warnings and match score together.'],
 ];
 
-const promises = [
-  ['No endless scrolling', Search],
-  ['No fake buyer demand', ShieldCheck],
-  ['Free for buyers', CircleDollarSign],
-  ['Control your contact details', Clock],
-];
-
 export function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-navy py-14 text-white sm:py-18 lg:py-24">
+      <section className="relative overflow-hidden bg-navy py-14 text-white sm:py-20 lg:py-24">
         <div className="absolute inset-x-0 top-0 h-1.5 bg-blue" />
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-[linear-gradient(135deg,transparent_0%,transparent_48%,rgba(47,107,255,0.22)_48%,rgba(47,107,255,0.22)_52%,transparent_52%)]" />
         <Container className="relative grid items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
@@ -42,17 +35,6 @@ export function HomePage() {
               <ButtonLink to="/search" variant="secondary" className="min-h-14 px-7 text-base">
                 Try search
               </ButtonLink>
-            </div>
-            <div className="mt-9 grid max-w-xl grid-cols-2 gap-3">
-              {promises.map(([label, Icon]) => {
-                const IconComponent = Icon as typeof Search;
-                return (
-                  <div key={label as string} className="flex items-center gap-2 rounded-lg bg-white/10 px-3 py-3 text-sm font-black text-white/78 ring-1 ring-white/10">
-                    <IconComponent className="h-4 w-4 text-amber" />
-                    {label as string}
-                  </div>
-                );
-              })}
             </div>
           </div>
           <HeroDemo />
@@ -145,7 +127,7 @@ export function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-white py-18">
+      <section className="bg-white py-20">
         <Container>
           <div className="mx-auto max-w-4xl rounded-2xl bg-blue p-8 text-center text-white shadow-card md:p-12">
             <h2 className="text-5xl font-black uppercase leading-[0.9] sm:text-7xl">Post it. Match it. Drive it.</h2>
@@ -166,48 +148,42 @@ export function HomePage() {
 function HeroDemo() {
   return (
     <div className="relative">
-      <div className="absolute -left-5 top-8 hidden rounded-lg bg-blue px-4 py-3 text-sm font-black uppercase tracking-[0.16em] text-white shadow-card lg:block">
-        Demand first
-      </div>
-      <div className="absolute -right-4 bottom-10 hidden rounded-lg bg-amber px-4 py-3 text-sm font-black uppercase tracking-[0.16em] text-navy shadow-card lg:block">
-        Sellers respond
-      </div>
-      <div className="rounded-[1.35rem] bg-white/10 p-4 shadow-card ring-1 ring-white/10 sm:p-5">
+      <div className="rounded-[1.35rem] bg-white/10 p-4 shadow-card ring-1 ring-white/10 sm:p-5 lg:rotate-1">
         <div className="rounded-xl bg-white p-6 shadow-card">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <span className="rounded-md bg-blue px-3 py-1.5 text-xs font-black uppercase text-white">Buyer Wanted</span>
-          <span className="rounded-md bg-green/10 px-3 py-1.5 text-xs font-black uppercase text-green">Open</span>
-        </div>
-        <h2 className="mt-5 text-3xl font-black leading-[0.95] text-navy">Wanted: Toyota Corolla under $20k</h2>
-        <p className="mt-3 text-sm font-semibold text-charcoal/62">Gold Coast / Automatic / Service history</p>
-        <div className="mt-5 grid grid-cols-3 gap-2">
-          {['Budget', 'Location', 'Timeframe'].map((label) => (
-            <div key={label} className="rounded-lg bg-ice p-3">
-              <p className="text-[10px] font-black uppercase text-charcoal/45">{label}</p>
-              <p className="mt-1 text-sm font-black text-navy">{label === 'Budget' ? '$20k' : label === 'Location' ? 'GC' : 'Now'}</p>
-            </div>
-          ))}
-        </div>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <span className="rounded-md bg-blue px-3 py-1.5 text-xs font-black uppercase text-white">Buyer Wanted</span>
+            <span className="rounded-md bg-green/10 px-3 py-1.5 text-xs font-black uppercase text-green">Open</span>
+          </div>
+          <h2 className="mt-5 text-3xl font-black leading-[0.95] text-navy">Wanted: Toyota Corolla under $20k</h2>
+          <p className="mt-3 text-sm font-semibold text-charcoal/62">Gold Coast / Automatic / Service history</p>
+          <div className="mt-5 grid grid-cols-3 gap-2">
+            {['Budget', 'Location', 'Timeframe'].map((label) => (
+              <div key={label} className="rounded-lg bg-ice p-3">
+                <p className="text-[10px] font-black uppercase text-charcoal/45">{label}</p>
+                <p className="mt-1 text-sm font-black text-navy">{label === 'Budget' ? '$20k' : label === 'Location' ? 'GC' : 'Now'}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="mx-auto h-8 w-px bg-white/25" />
 
         <div className="grid gap-3">
-        {[
-          ['Northern Rivers Auto', '2019 Corolla Ascent Sport', '$19,990', 'Strong Match', 'green'],
-          ['Coastline Cars', '2018 Mazda 3 Maxx', '$17,500', 'Good Match', 'blue'],
-        ].map(([dealer, car, price, match, tone]) => (
-          <div key={car} className="rounded-xl bg-white/96 p-5 shadow-soft">
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <p className="text-xs font-black uppercase text-charcoal/45">{dealer}</p>
-              <span className={tone === 'green' ? 'rounded-md bg-green/10 px-2 py-1 text-xs font-black text-green' : 'rounded-md bg-blue/10 px-2 py-1 text-xs font-black text-blue'}>
-                {match}
-              </span>
+          {[
+            ['Northern Rivers Auto', '2019 Corolla Ascent Sport', '$19,990', 'Strong Match', 'green'],
+            ['Coastline Cars', '2018 Mazda 3 Maxx', '$17,500', 'Good Match', 'blue'],
+          ].map(([dealer, car, price, match, tone]) => (
+            <div key={car} className="rounded-xl bg-white p-5 shadow-soft">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-xs font-black uppercase text-charcoal/50">{dealer}</p>
+                <span className={tone === 'green' ? 'rounded-md bg-green px-2 py-1 text-xs font-black text-white' : 'rounded-md bg-blue px-2 py-1 text-xs font-black text-white'}>
+                  {match}
+                </span>
+              </div>
+              <p className="mt-2 text-lg font-black text-navy">{car}</p>
+              <p className="mt-1 text-sm font-semibold text-charcoal/72">{price} / 88,000km / Automatic</p>
             </div>
-            <p className="mt-2 text-lg font-black text-navy">{car}</p>
-            <p className="mt-1 text-sm text-charcoal/62">{price} / 88,000km / Automatic</p>
-          </div>
-        ))}
+          ))}
         </div>
       </div>
     </div>
