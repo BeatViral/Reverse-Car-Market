@@ -151,10 +151,10 @@ function HeroDemo() {
       <div className="rounded-[1.35rem] bg-white/10 p-4 shadow-card ring-1 ring-white/10 sm:p-5 lg:rotate-1">
         <div className="rounded-xl bg-white p-6 shadow-card">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <span className="rounded-md bg-blue px-3 py-1.5 text-xs font-black uppercase text-white">Buyer Request</span>
+            <span className="rounded-md bg-blue px-3 py-1.5 text-xs font-black uppercase text-white">Ready to Buy</span>
             <span className="rounded-md bg-green/10 px-3 py-1.5 text-xs font-black uppercase text-green">Open</span>
           </div>
-          <h2 className="mt-5 text-3xl font-black leading-[0.95] text-navy">Toyota Corolla under $20k</h2>
+          <h2 className="mt-5 text-3xl font-black leading-[0.95] text-navy">I'm ready to buy a Toyota Corolla under $20k</h2>
           <p className="mt-3 text-sm font-semibold text-charcoal/62">Gold Coast / Automatic / Service history</p>
           <div className="mt-5 grid grid-cols-3 gap-2">
             {['Budget', 'Location', 'Timeframe'].map((label) => (

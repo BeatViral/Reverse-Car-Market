@@ -17,10 +17,6 @@ function Chip({ children, tone = 'slate' }: { children: ReactNode; tone?: 'blue'
   return <span className={cx('inline-flex items-center rounded-md px-2.5 py-1 text-xs font-black', tones[tone])}>{children}</span>;
 }
 
-function buyerRequestTitle(title: string) {
-  return title.replace(/^Wanted:\s*/i, '');
-}
-
 export function BuyerWantedCardView({
   card,
   compact = false,
@@ -34,10 +30,10 @@ export function BuyerWantedCardView({
     <article className="relative overflow-hidden rounded-2xl border-2 border-blue/20 bg-white p-6 shadow-[0_24px_70px_rgba(47,107,255,0.14)]">
       <div className="absolute inset-x-0 top-0 h-1.5 bg-blue" />
       <div className="flex flex-wrap items-center gap-2">
-        <Chip tone="blue">Buyer Request</Chip>
+        <Chip tone="blue">READY TO BUY</Chip>
         <Chip tone={card.status === 'open' ? 'green' : 'slate'}>{card.status}</Chip>
       </div>
-      <h3 className="mt-5 text-2xl font-black leading-[1.05] text-navy">{buyerRequestTitle(card.title)}</h3>
+      <h3 className="mt-5 text-2xl font-black leading-[1.05] text-navy">{card.title}</h3>
       <p className="mt-4 text-sm font-semibold leading-6 text-charcoal/70">{compact ? card.aiSummary : card.naturalLanguageRequest}</p>
       <div className="mt-5 flex flex-wrap gap-2">
         <Chip>Budget: {card.budgetMax ? `under ${formatCurrency(card.budgetMax, true)}` : 'open'}</Chip>
@@ -115,10 +111,10 @@ export function HeroCardStack() {
     <div className="relative mx-auto max-w-xl">
       <div className="rounded-lg bg-white p-6 shadow-border">
         <div className="flex items-center justify-between gap-4">
-          <Chip tone="blue">Buyer Request Card</Chip>
+          <Chip tone="blue">READY TO BUY</Chip>
           <span className="text-xs font-bold uppercase text-green">Open</span>
         </div>
-        <h2 className="mt-5 text-2xl font-black text-navy">Toyota Corolla under $20k</h2>
+        <h2 className="mt-5 text-2xl font-black text-navy">I'm ready to buy a Toyota Corolla under $20k</h2>
         <div className="mt-5 flex flex-wrap gap-2">
           {['Automatic', 'NSW / QLD', 'Under 120,000km', 'Ready this month', 'Service history preferred'].map((item) => (
             <Chip key={item}>{item}</Chip>

@@ -221,7 +221,7 @@ export const buyerWantedCards: BuyerWantedCard[] = [
   {
     id: 'wanted-corolla-20k',
     buyerId: 'buyer-ava',
-    title: 'Toyota Corolla under $20k',
+    title: "I'm ready to buy a Toyota Corolla under $20k",
     naturalLanguageRequest: 'I need a Toyota Corolla under $20k near Gold Coast, automatic and reliable.',
     make: 'Toyota',
     model: 'Corolla',
@@ -246,7 +246,7 @@ export const buyerWantedCards: BuyerWantedCard[] = [
   {
     id: 'wanted-hatchback-18k',
     buyerId: 'buyer-liam',
-    title: 'Reliable hatchback under $18k',
+    title: "I'm ready to buy a reliable hatchback under $18k",
     naturalLanguageRequest: 'Looking for an automatic hatchback under $18k, first car, low running costs.',
     bodyType: 'Hatchback',
     transmission: 'Automatic',
@@ -268,7 +268,7 @@ export const buyerWantedCards: BuyerWantedCard[] = [
   {
     id: 'wanted-family-suv-35k',
     buyerId: 'buyer-ava',
-    title: 'Family SUV under $35k',
+    title: "I'm ready to buy a family SUV under $35k",
     naturalLanguageRequest: 'Need a reliable family SUV under $35k around Brisbane with safety features.',
     bodyType: 'SUV',
     transmission: 'Automatic',
@@ -290,7 +290,7 @@ export const buyerWantedCards: BuyerWantedCard[] = [
   {
     id: 'wanted-work-ute-40k',
     buyerId: 'buyer-liam',
-    title: 'Work ute under $40k',
+    title: "I'm ready to buy a work ute under $40k",
     naturalLanguageRequest: 'I need a diesel ute under $40k for work, ideally 4x4 and automatic.',
     bodyType: 'Ute',
     fuelType: 'Diesel',
@@ -313,7 +313,7 @@ export const buyerWantedCards: BuyerWantedCard[] = [
   {
     id: 'wanted-hybrid-suv-45k',
     buyerId: 'buyer-ava',
-    title: 'Hybrid SUV under $45k',
+    title: "I'm ready to buy a hybrid SUV under $45k",
     naturalLanguageRequest: 'Looking for a hybrid SUV under $45k, low running costs, Brisbane or Gold Coast.',
     bodyType: 'SUV',
     fuelType: 'Hybrid',

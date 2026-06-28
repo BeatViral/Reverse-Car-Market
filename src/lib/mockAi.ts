@@ -73,9 +73,10 @@ export function structureWantedRequest(raw: string): Partial<BuyerWantedCard> {
 
   const subject = [intent.make, intent.model].filter(Boolean).join(' ') || intent.bodyType || 'car';
   const budgetText = intent.budgetMax ? ` under $${Math.round(intent.budgetMax / 1000)}k` : '';
+  const article = /^(audi|ev|mpv|suv)\b/i.test(subject) ? 'an' : 'a';
 
   return {
-    title: `${subject}${budgetText}`,
+    title: `I'm ready to buy ${article} ${subject}${budgetText}`,
     naturalLanguageRequest: raw,
     make: intent.make,
     model: intent.model,
