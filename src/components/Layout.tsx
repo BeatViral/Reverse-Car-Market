@@ -1,4 +1,4 @@
-import { Menu, Search, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -8,9 +8,8 @@ import { cx } from '../lib/format';
 
 const navItems = [
   ['How It Works', '/how-it-works'],
-  ['Buyers', '/buyers'],
+  ['Browse', '/browse'],
   ['Dealers', '/dealers'],
-  ['Trust', '/trust'],
   ['Pricing', '/pricing'],
 ];
 
@@ -37,14 +36,8 @@ export function Layout() {
                 {label}
               </NavLink>
             ))}
-            <NavLink to="/search" className={navClass}>
-              <Search size={16} className="inline -translate-y-0.5" /> Search
-            </NavLink>
           </nav>
           <div className="hidden items-center gap-3 lg:flex">
-            <ButtonLink to={dashboardPath} variant="ghost">
-              Dashboard
-            </ButtonLink>
             <ButtonLink to="/auth" variant="secondary">
               Sign In
             </ButtonLink>
@@ -96,7 +89,7 @@ function Footer() {
         <div className="grid gap-8 md:grid-cols-[1.4fr_2fr]">
           <div>
             <p className="text-2xl font-black">Reverse Car Market</p>
-            <p className="mt-3 max-w-md text-sm leading-6 text-white/65">Reverse Car Market — the car market, flipped.</p>
+            <p className="mt-3 max-w-md text-sm leading-6 text-white/65">Reverse Car Market - the car market, flipped.</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {columns.map(([heading, links]) => (

@@ -126,7 +126,7 @@ export function HeroCardStack() {
           <Chip tone="green">Strong Match</Chip>
         </div>
         <h3 className="mt-4 text-lg font-black text-navy">2019 Toyota Corolla Ascent Sport</h3>
-        <p className="mt-2 text-sm text-charcoal/70">$19,990 · 88,000km · Automatic</p>
+        <p className="mt-2 text-sm text-charcoal/70">$19,990 / 88,000km / Automatic</p>
       </div>
     </div>
   );
@@ -199,7 +199,7 @@ export function InventoryMiniCard({ item, selected = false, onClick }: { item: I
             {item.year} {item.make} {item.model} {item.badge}
           </p>
           <p className="mt-1 text-sm text-charcoal/65">
-            {formatCurrency(item.price)} · {formatNumber(item.kilometres)}km · {item.transmission}
+            {formatCurrency(item.price)} / {formatNumber(item.kilometres)}km / {item.transmission}
           </p>
         </div>
         <Chip tone={item.status === 'active' ? 'green' : 'slate'}>{item.status}</Chip>

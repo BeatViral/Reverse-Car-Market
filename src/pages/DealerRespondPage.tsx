@@ -34,7 +34,7 @@ export function DealerRespondPage() {
               </div>
               <p className="mt-3 text-sm leading-6 text-charcoal/70">{response.matchSummary}</p>
               <div className="mt-4 grid gap-2 text-sm text-charcoal/65">
-                <p>{formatCurrency(response.vehicle.price)} · {formatNumber(response.vehicle.kilometres)}km · {response.vehicle.location}</p>
+                <p>{formatCurrency(response.vehicle.price)} / {formatNumber(response.vehicle.kilometres)}km / {response.vehicle.location}</p>
                 <p>Warnings: {response.warnings.length ? response.warnings.join(', ') : 'None'}</p>
               </div>
             </div>

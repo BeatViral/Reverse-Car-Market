@@ -93,7 +93,7 @@ export function structureWantedRequest(raw: string): Partial<BuyerWantedCard> {
     maxSellerResponses: 8,
     publicVisibility: true,
     status: 'open',
-    aiSummary: `Structured from: “${raw}”`,
+    aiSummary: `Structured from: "${raw}"`,
   };
 }
 

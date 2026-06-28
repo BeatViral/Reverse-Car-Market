@@ -538,23 +538,23 @@ export const outreachCopy = {
   subject: 'Founding dealers wanted for Reverse Car Market',
   body: `Hi [Dealer Name],
 
-I’m building Reverse Car Market, a buyer-first car marketplace where buyers post the car they want and dealers respond with matching stock.
+I'm building Reverse Car Market, a buyer-first car marketplace where buyers post the car they want and dealers respond with matching stock.
 
-We’re also testing Dealer Match Cards. You send us your current inventory, and we turn it into simple buyer-interest cards like:
+We're also testing Dealer Match Cards. You send us your current inventory, and we turn it into simple buyer-interest cards like:
 
-“Looking for a Toyota Corolla under $20k?”
-“Looking for a reliable SUV under $35k?”
-“Looking for a first car under $18k?”
+"Looking for a Toyota Corolla under $20k?"
+"Looking for a reliable SUV under $35k?"
+"Looking for a first car under $18k?"
 
-Buyers click “I’m interested,” and we send you the buyer-interest lead.
+Buyers click "I'm interested," and we send you the buyer-interest lead.
 
-We’re onboarding a small group of founding dealers free during the pilot. No setup fee and no subscription while we test.
+We're onboarding a small group of founding dealers free during the pilot. No setup fee and no subscription while we test.
 
-If you’re interested, send a stock list, CSV, spreadsheet or link to your inventory page and we’ll create the first cards for you.
+If you're interested, send a stock list, CSV, spreadsheet or link to your inventory page and we'll create the first cards for you.
 
 Regards,
 Mahmood
 Reverse Car Market
 
-To opt out of future messages, reply “unsubscribe.”`,
+To opt out of future messages, reply "unsubscribe."`,
 };

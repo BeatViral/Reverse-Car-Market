@@ -42,7 +42,7 @@ export function AdminDashboardPage() {
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div>
                       <p className="font-black text-navy">{dealer.businessName}</p>
-                      <p className="text-sm text-charcoal/60">{dealer.location} · {dealer.dealerLicense}</p>
+                      <p className="text-sm text-charcoal/60">{dealer.location} / {dealer.dealerLicense}</p>
                     </div>
                     <span className="rounded-md bg-blue/10 px-3 py-1 text-xs font-black uppercase text-blue">{dealer.verifiedStatus}</span>
                   </div>
