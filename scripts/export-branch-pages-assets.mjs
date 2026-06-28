@@ -17,3 +17,5 @@ if (!jsFile || !cssFile) {
 mkdirSync(branchAssetsDir, { recursive: true });
 copyFileSync(join(distAssetsDir, jsFile), join(branchAssetsDir, 'app.js'));
 copyFileSync(join(distAssetsDir, cssFile), join(branchAssetsDir, 'app.css'));
+copyFileSync(join(distAssetsDir, jsFile), join(distAssetsDir, 'app.js'));
+copyFileSync(join(distAssetsDir, cssFile), join(distAssetsDir, 'app.css'));
