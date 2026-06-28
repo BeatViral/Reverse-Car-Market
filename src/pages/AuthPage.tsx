@@ -6,7 +6,7 @@ import { isSupabaseConfigured } from '../lib/supabase';
 import type { UserRole } from '../types';
 
 const roleOptions: Array<{ role: UserRole; title: string; text: string }> = [
-  { role: 'buyer', title: 'Buyer', text: 'Post Wanted Cards and compare seller responses.' },
+  { role: 'buyer', title: 'Buyer', text: 'Post Request Cards and compare seller responses.' },
   { role: 'private_seller', title: 'Private Seller', text: 'Find public buyer demand and respond with your car.' },
   { role: 'dealer', title: 'Dealer', text: 'Upload inventory, publish Match Cards and respond to buyer demand.' },
 ];

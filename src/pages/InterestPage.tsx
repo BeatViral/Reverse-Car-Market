@@ -16,7 +16,7 @@ export function InterestPage() {
         <SectionHeader
           eyebrow="Buyer interest"
           title="Tell us what you're looking for."
-          description="This creates a buyer-interest record and can optionally create a real Buyer Wanted Card. The dealer card is not treated as fake buyer demand."
+          description="This creates a buyer-interest record and can optionally create a real Buyer Request Card. The dealer card is not treated as fake buyer demand."
         />
         <div className="mt-8 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <DealerMatchCardView card={card} action={false} />
@@ -24,7 +24,7 @@ export function InterestPage() {
             {submitted ? (
               <div className="rounded-lg bg-green/10 p-5">
                 <h2 className="text-2xl font-black text-navy">Interest captured</h2>
-                <p className="mt-2 text-sm leading-6 text-charcoal/70">A buyer-interest record was created. If selected, a real Buyer Wanted Card would be generated for the buyer to confirm.</p>
+                <p className="mt-2 text-sm leading-6 text-charcoal/70">A buyer-interest record was created. If selected, a real Buyer Request Card would be generated for the buyer to confirm.</p>
               </div>
             ) : null}
             <div className="grid gap-4 md:grid-cols-2">
@@ -54,7 +54,7 @@ export function InterestPage() {
                 <input type="checkbox" /> Create account
               </label>
               <label className="flex items-center gap-2 text-sm font-bold text-navy">
-                <input type="checkbox" defaultChecked /> Create a real Buyer Wanted Card from this interest
+                <input type="checkbox" defaultChecked /> Create a real Buyer Request Card from this interest
               </label>
             </div>
             <div className="mt-6">

@@ -17,6 +17,10 @@ function Chip({ children, tone = 'slate' }: { children: ReactNode; tone?: 'blue'
   return <span className={cx('inline-flex items-center rounded-md px-2.5 py-1 text-xs font-black', tones[tone])}>{children}</span>;
 }
 
+function buyerRequestTitle(title: string) {
+  return title.replace(/^Wanted:\s*/i, '');
+}
+
 export function BuyerWantedCardView({
   card,
   compact = false,
@@ -30,10 +34,10 @@ export function BuyerWantedCardView({
     <article className="relative overflow-hidden rounded-2xl border-2 border-blue/20 bg-white p-6 shadow-[0_24px_70px_rgba(47,107,255,0.14)]">
       <div className="absolute inset-x-0 top-0 h-1.5 bg-blue" />
       <div className="flex flex-wrap items-center gap-2">
-        <Chip tone="blue">Buyer Wanted</Chip>
+        <Chip tone="blue">Buyer Request</Chip>
         <Chip tone={card.status === 'open' ? 'green' : 'slate'}>{card.status}</Chip>
       </div>
-      <h3 className="mt-5 text-2xl font-black leading-[1.05] text-navy">{card.title}</h3>
+      <h3 className="mt-5 text-2xl font-black leading-[1.05] text-navy">{buyerRequestTitle(card.title)}</h3>
       <p className="mt-4 text-sm font-semibold leading-6 text-charcoal/70">{compact ? card.aiSummary : card.naturalLanguageRequest}</p>
       <div className="mt-5 flex flex-wrap gap-2">
         <Chip>Budget: {card.budgetMax ? `under ${formatCurrency(card.budgetMax, true)}` : 'open'}</Chip>
@@ -90,7 +94,7 @@ export function DealerMatchCardView({
         <Chip>{card.buyerUseCase}</Chip>
       </div>
       <p className="mt-5 border-t border-amber/25 pt-4 text-xs font-black uppercase tracking-[0.08em] text-charcoal/62">
-        Dealer-created inventory prompt. It is not a Buyer Wanted Card.
+        Dealer-created inventory prompt. It is not a Buyer Request Card.
       </p>
       {action ? (
         <div className="mt-6 flex flex-wrap gap-3">
@@ -98,7 +102,7 @@ export function DealerMatchCardView({
             <Sparkles size={17} /> {card.ctaText}
           </ButtonLink>
           <ButtonLink to="/buyer/create-wanted-card" variant="secondary">
-            Create Wanted Card
+            Create Request Card
           </ButtonLink>
         </div>
       ) : null}
@@ -111,10 +115,10 @@ export function HeroCardStack() {
     <div className="relative mx-auto max-w-xl">
       <div className="rounded-lg bg-white p-6 shadow-border">
         <div className="flex items-center justify-between gap-4">
-          <Chip tone="blue">Buyer Wanted Card</Chip>
+          <Chip tone="blue">Buyer Request Card</Chip>
           <span className="text-xs font-bold uppercase text-green">Open</span>
         </div>
-        <h2 className="mt-5 text-2xl font-black text-navy">Wanted: Toyota Corolla under $20k</h2>
+        <h2 className="mt-5 text-2xl font-black text-navy">Toyota Corolla under $20k</h2>
         <div className="mt-5 flex flex-wrap gap-2">
           {['Automatic', 'NSW / QLD', 'Under 120,000km', 'Ready this month', 'Service history preferred'].map((item) => (
             <Chip key={item}>{item}</Chip>
@@ -230,7 +234,7 @@ export function TrustChecklist() {
   const items = [
     ['Verified dealer profiles', ShieldCheck],
     ['Buyer contact visibility controls', Eye],
-    ['No fake Buyer Wanted Cards', CheckCircle2],
+    ['No fake Buyer Request Cards', CheckCircle2],
     ['Dealer Match Cards are clearly labelled', BadgeCheck],
     ['No scraping third-party sites', AlertTriangle],
     ['Match-score warnings', MessageSquare],
@@ -256,7 +260,7 @@ export function TrustChecklist() {
 export function DealerPromptDisclaimer() {
   return (
     <div className="rounded-lg border border-amber/30 bg-amber/10 p-4 text-sm leading-6 text-charcoal/75">
-      <strong className="text-navy">No fake demand:</strong> Dealer Match Cards are dealer-created inventory prompts. Buyer Wanted Cards are created only by real buyers.
+      <strong className="text-navy">No fake demand:</strong> Dealer Match Cards are dealer-created inventory prompts. Buyer Request Cards are created only by real buyers.
     </div>
   );
 }

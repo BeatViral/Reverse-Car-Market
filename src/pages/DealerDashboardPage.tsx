@@ -10,7 +10,7 @@ const navItems: Array<[string, string]> = [
   ['Inventory', '/dealer/dashboard'],
   ['Upload Inventory', '/dealer/inventory/upload'],
   ['Dealer Match Cards', '/dealer/dashboard'],
-  ['Buyer Wanted Cards', '/dealer/dashboard'],
+  ['Buyer Request Cards', '/dealer/dashboard'],
   ['Buyer Interest Leads', '/dealer/dashboard'],
   ['Responses Sent', '/dealer/dashboard'],
   ['Saved Searches', '/dealer/dashboard'],
@@ -47,7 +47,7 @@ export function DealerDashboardPage() {
         </div>
         <div className="rounded-lg bg-white p-5 shadow-soft ring-1 ring-charcoal/10">
           <h2 className="text-2xl font-black text-navy">Generated Dealer Match Card drafts</h2>
-          <p className="mt-1 text-sm text-charcoal/60">Review wording before publishing. These are dealer-created prompts, not Buyer Wanted Cards.</p>
+          <p className="mt-1 text-sm text-charcoal/60">Review wording before publishing. These are dealer-created prompts, not Buyer Request Cards.</p>
           <div className="mt-5 grid gap-5 lg:grid-cols-2">
             {generatedCards.map((card) => (
               <DealerMatchCardView key={card.id} card={card} />
@@ -55,7 +55,7 @@ export function DealerDashboardPage() {
           </div>
         </div>
         <div className="rounded-lg bg-white p-5 shadow-soft ring-1 ring-charcoal/10">
-          <h2 className="text-2xl font-black text-navy">Open public Buyer Wanted Cards</h2>
+          <h2 className="text-2xl font-black text-navy">Open public Buyer Request Cards</h2>
           <div className="mt-5 grid gap-5 lg:grid-cols-2">
             {buyerWantedCards.slice(0, 4).map((card) => (
               <BuyerWantedCardView key={card.id} card={card} />

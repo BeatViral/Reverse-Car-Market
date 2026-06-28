@@ -5,7 +5,7 @@ import { Container } from '../components/Section';
 import { buyerWantedCards, dealerMatchCards } from '../data/demo';
 
 const steps = [
-  ['Post what you want', 'Budget, location, must-haves. One simple Wanted Card.'],
+  ['Post what you want', 'Budget, location, must-haves. One simple Request Card.'],
   ['Sellers reply', 'Dealers and sellers respond only when they have a match.'],
   ['Compare clearly', 'Price, kilometres, warranty, warnings and match score together.'],
 ];
@@ -21,16 +21,16 @@ export function HomePage() {
             <p className="inline-flex items-center gap-2 rounded-md bg-white/10 px-3 py-1.5 text-xs font-black uppercase tracking-[0.18em] text-amber ring-1 ring-white/10">
               <Zap size={14} /> The car market, flipped
             </p>
-            <h1 className="mt-6 max-w-4xl text-[3.9rem] font-black uppercase leading-[0.82] text-white sm:text-[5.7rem] lg:text-[7.5rem]">
-              Stop scrolling.
-              <span className="mt-2 block text-blue">Post demand.</span>
+            <h1 className="mt-6 max-w-4xl text-[3.2rem] font-black leading-[0.9] text-white sm:text-[4.7rem] lg:text-[6.25rem]">
+              Post the car you want.
+              <span className="mt-2 block text-blue">Let sellers come to you.</span>
             </h1>
             <p className="mt-7 max-w-xl text-xl font-semibold leading-8 text-white/72">
               Tell the market what car you want. Sellers respond with matching cars. You compare the offers.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <ButtonLink to="/buyer/create-wanted-card" className="min-h-14 px-7 text-base">
-                Post a Car Wanted <ArrowRight size={17} />
+                Post a Car Request <ArrowRight size={17} />
               </ButtonLink>
               <ButtonLink to="/search" variant="secondary" className="min-h-14 px-7 text-base">
                 Try search
@@ -66,7 +66,7 @@ export function HomePage() {
               <p className="text-sm font-black uppercase tracking-[0.18em] text-blue">The important rule</p>
               <h2 className="mt-3 text-4xl font-black leading-[0.95] text-navy sm:text-5xl">Buyer cards and dealer cards stay separate.</h2>
               <p className="mt-4 text-base leading-7 text-charcoal/70">
-                A Buyer Wanted Card is real buyer demand. A Dealer Match Card is a clearly labelled dealer prompt from inventory.
+                A Buyer Request Card is real buyer demand. A Dealer Match Card is a clearly labelled dealer prompt from inventory.
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-2">
@@ -133,7 +133,7 @@ export function HomePage() {
             <h2 className="text-5xl font-black uppercase leading-[0.9] sm:text-7xl">Post it. Match it. Drive it.</h2>
             <p className="mt-5 text-lg font-semibold text-white/78">Reverse Car Market starts with what buyers actually want.</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <ButtonLink to="/buyer/create-wanted-card" variant="dark" className="min-h-14 px-7 text-base">Create Wanted Card</ButtonLink>
+              <ButtonLink to="/buyer/create-wanted-card" variant="dark" className="min-h-14 px-7 text-base">Create Request Card</ButtonLink>
               <ButtonLink to="/browse" variant="secondary" className="min-h-14 px-7 text-base">
                 Browse Match Cards
               </ButtonLink>
@@ -151,10 +151,10 @@ function HeroDemo() {
       <div className="rounded-[1.35rem] bg-white/10 p-4 shadow-card ring-1 ring-white/10 sm:p-5 lg:rotate-1">
         <div className="rounded-xl bg-white p-6 shadow-card">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <span className="rounded-md bg-blue px-3 py-1.5 text-xs font-black uppercase text-white">Buyer Wanted</span>
+            <span className="rounded-md bg-blue px-3 py-1.5 text-xs font-black uppercase text-white">Buyer Request</span>
             <span className="rounded-md bg-green/10 px-3 py-1.5 text-xs font-black uppercase text-green">Open</span>
           </div>
-          <h2 className="mt-5 text-3xl font-black leading-[0.95] text-navy">Wanted: Toyota Corolla under $20k</h2>
+          <h2 className="mt-5 text-3xl font-black leading-[0.95] text-navy">Toyota Corolla under $20k</h2>
           <p className="mt-3 text-sm font-semibold text-charcoal/62">Gold Coast / Automatic / Service history</p>
           <div className="mt-5 grid grid-cols-3 gap-2">
             {['Budget', 'Location', 'Timeframe'].map((label) => (
@@ -209,7 +209,7 @@ function DealerMiniFlow() {
         );
       })}
       <p className="rounded-lg bg-amber/10 p-3 text-sm font-semibold leading-6 text-charcoal/72">
-        Clearly labelled dealer prompt. Never a fake Buyer Wanted Card.
+        Clearly labelled dealer prompt. Never a fake Buyer Request Card.
       </p>
     </div>
   );

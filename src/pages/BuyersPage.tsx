@@ -5,7 +5,7 @@ import { Container, SectionHeader } from '../components/Section';
 import { buyerWantedCards, dealerResponses } from '../data/demo';
 
 const features = [
-  [WalletCards, 'Create Wanted Cards', 'Tell sellers exactly what you want without browsing stale listings.'],
+  [WalletCards, 'Create Request Cards', 'Tell sellers exactly what you want without browsing stale listings.'],
   [LockKeyhole, 'Stay in control', 'Hide contact details until you are ready to speak with a seller.'],
   [GitCompare, 'Compare offers', 'See cars, prices, warranty details, warnings and match score together.'],
   [PauseCircle, 'Close cards anytime', 'Pause or close a card when you have enough offers.'],
@@ -22,10 +22,10 @@ export function BuyersPage() {
             <p className="text-sm font-black uppercase tracking-[0.18em] text-blue">For buyers</p>
             <h1 className="mt-4 text-5xl font-black leading-tight text-navy">Buy the car you want without chasing every listing.</h1>
             <p className="mt-5 text-lg leading-8 text-charcoal/70">
-              Create a Buyer Wanted Card with your budget, location and must-haves. Dealers and sellers respond under one card so you can compare clearly.
+              Create a Buyer Request Card with your budget, location and must-haves. Dealers and sellers respond under one card so you can compare clearly.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink to="/buyer/create-wanted-card">Create Wanted Card</ButtonLink>
+              <ButtonLink to="/buyer/create-wanted-card">Create Request Card</ButtonLink>
               <ButtonLink to="/browse" variant="secondary">
                 Browse Match Cards
               </ButtonLink>

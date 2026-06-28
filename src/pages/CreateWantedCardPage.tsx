@@ -7,7 +7,7 @@ import type { BuyerWantedCard } from '../types';
 
 const navItems: Array<[string, string]> = [
   ['Overview', '/buyer/dashboard'],
-  ['Create Wanted Card', '/buyer/create-wanted-card'],
+  ['Create Request Card', '/buyer/create-wanted-card'],
   ['Offers Received', '/buyer/dashboard'],
   ['Messages', '/buyer/dashboard'],
   ['Account Settings', '/buyer/dashboard'],
@@ -21,7 +21,7 @@ export function CreateWantedCardPage() {
   const preview: BuyerWantedCard = {
     id: 'preview-card',
     buyerId: 'preview-buyer',
-    title: structured.title ?? 'Wanted: car',
+    title: structured.title ?? 'Car request',
     naturalLanguageRequest: request,
     make: structured.make,
     model: structured.model,
@@ -48,7 +48,7 @@ export function CreateWantedCardPage() {
   };
 
   return (
-    <DashboardShell title="Create Wanted Card" description="Type naturally, then refine the structured criteria sellers will match against." navItems={navItems}>
+    <DashboardShell title="Create Request Card" description="Type naturally, then refine the structured criteria sellers will match against." navItems={navItems}>
       <div className="grid gap-6 xl:grid-cols-[1fr_0.9fr]">
         <form className="rounded-lg bg-white p-6 shadow-soft ring-1 ring-charcoal/10">
           <label className="grid gap-2 text-sm font-black text-navy">
@@ -104,7 +104,7 @@ export function CreateWantedCardPage() {
             </label>
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button type="button">Create Wanted Card</Button>
+            <Button type="button">Create Request Card</Button>
             <Button type="button" variant="secondary">
               Save draft
             </Button>

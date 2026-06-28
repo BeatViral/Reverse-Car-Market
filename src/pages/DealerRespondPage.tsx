@@ -9,7 +9,7 @@ import { formatCurrency, formatNumber } from '../lib/format';
 
 const navItems: Array<[string, string]> = [
   ['Overview', '/dealer/dashboard'],
-  ['Buyer Wanted Cards', '/dealer/dashboard'],
+  ['Buyer Request Cards', '/dealer/dashboard'],
   ['Responses Sent', '/dealer/dashboard'],
   ['Inventory', '/dealer/dashboard'],
 ];
@@ -21,7 +21,7 @@ export function DealerRespondPage() {
   const response = useMemo(() => createResponseFromInventory(card, selectedId), [card, selectedId]);
 
   return (
-    <DashboardShell title="Respond to Buyer Wanted Card" description="Select one of your inventory items or enter a vehicle manually. Responses are scored against the buyer's criteria." navItems={navItems}>
+    <DashboardShell title="Respond to Buyer Request Card" description="Select one of your inventory items or enter a vehicle manually. Responses are scored against the buyer's criteria." navItems={navItems}>
       <div className="grid gap-6 xl:grid-cols-[0.85fr_1.15fr]">
         <div className="grid h-fit gap-5">
           <BuyerWantedCardView card={card} action={false} />

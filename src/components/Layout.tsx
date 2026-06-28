@@ -41,7 +41,7 @@ export function Layout() {
             <ButtonLink to="/auth" variant="secondary">
               Sign In
             </ButtonLink>
-            <ButtonLink to="/buyer/create-wanted-card">Post a Car Wanted</ButtonLink>
+            <ButtonLink to="/buyer/create-wanted-card">Post a Car Request</ButtonLink>
           </div>
           <button
             type="button"
@@ -61,7 +61,7 @@ export function Layout() {
                 </NavLink>
               ))}
               <ButtonLink to="/buyer/create-wanted-card" className="mt-2" onClick={() => setOpen(false)}>
-                Post a Car Wanted
+                Post a Car Request
               </ButtonLink>
             </Container>
           </div>

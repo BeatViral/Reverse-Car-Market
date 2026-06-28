@@ -75,7 +75,7 @@ export function structureWantedRequest(raw: string): Partial<BuyerWantedCard> {
   const budgetText = intent.budgetMax ? ` under $${Math.round(intent.budgetMax / 1000)}k` : '';
 
   return {
-    title: `Wanted: ${subject}${budgetText}`,
+    title: `${subject}${budgetText}`,
     naturalLanguageRequest: raw,
     make: intent.make,
     model: intent.model,
