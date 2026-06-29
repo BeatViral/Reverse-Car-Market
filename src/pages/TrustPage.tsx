@@ -15,8 +15,8 @@ export function TrustPage() {
           <TrustChecklist />
         </div>
         <div className="mt-8 grid gap-5 lg:grid-cols-3">
-          <PolicyCard icon={CheckCircle2} title="Ready-to-Buy Cards" text="Posted only by real buyers. A dealer can respond to a card, but cannot create fake buyer demand." />
-          <PolicyCard icon={ShieldCheck} title="Dealer Match Cards" text="Created by verified dealers from real inventory and clearly labelled as dealer-created prompts." />
+          <PolicyCard icon={CheckCircle2} title="Buyer posts" text="Posted only by real buyers. A seller can reply, but cannot create fake buyer demand." />
+          <PolicyCard icon={ShieldCheck} title="Seller posts" text="Created from real vehicle details and clearly labelled as seller-created offers." />
           <PolicyCard icon={AlertTriangle} title="Buying safety" text="Reverse Car Market is a matching platform, not a vehicle inspector. Verify details, seller identity and PPSR history before purchase." />
         </div>
         <div className="mt-8">

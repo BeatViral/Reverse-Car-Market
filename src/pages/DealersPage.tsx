@@ -6,8 +6,8 @@ import { dealerMatchCards } from '../data/demo';
 
 const features = [
   [Database, 'Upload inventory', 'Manual entry, CSV upload, pasted inventory text or a permitted inventory URL.'],
-  [FileSpreadsheet, 'Create Dealer Match Cards', 'Convert owned stock into honest prompts buyers can raise their hand on.'],
-  [MessageSquareReply, 'Respond to Ready-to-Buy Cards', 'Reply only when your stock genuinely fits what a buyer wants.'],
+  [FileSpreadsheet, 'Create seller posts', 'Convert owned stock into honest prompts buyers can raise their hand on.'],
+  [MessageSquareReply, 'Respond to buyer posts', 'Reply only when your stock genuinely fits what a buyer wants.'],
   [BellRing, 'Receive buyer-interest leads', 'Buyers confirm interest before dealers see lead details.'],
   [LineChart, 'Demand insights', 'See which price bands, models and use cases buyers are requesting.'],
   [BadgeCheck, 'Founding dealer pilot', 'Join free during pilot and keep a discounted monthly path after launch.'],
@@ -22,7 +22,7 @@ export function DealersPage() {
             <p className="text-sm font-black uppercase tracking-[0.18em] text-amber">For dealers</p>
             <h1 className="mt-4 text-5xl font-black leading-tight">See demand before buyers walk into someone else's yard.</h1>
             <p className="mt-5 text-lg leading-8 text-white/70">
-              Turn inventory into buyer-interest cards, respond to real Ready-to-Buy Cards and build a lead pipeline around demand instead of impressions.
+              Turn inventory into seller posts, respond to buyer posts and build a lead pipeline around demand instead of impressions.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <ButtonLink to="/dealers/founding" variant="secondary">
@@ -40,7 +40,7 @@ export function DealersPage() {
       </section>
       <section className="section-pad bg-ice">
         <Container>
-          <SectionHeader title="Dealer tools for real demand." description="Dealer Match Cards are not fake buyer demand. They are clearly labelled prompts created from real inventory to convert buyer interest into leads." />
+          <SectionHeader title="Dealer tools for real demand." description="Seller posts are created from real inventory, clearly labelled and built to convert buyer interest into leads." />
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {features.map(([Icon, title, text]) => (
               <div key={title as string} className="rounded-lg bg-white p-5 shadow-soft ring-1 ring-charcoal/10">
@@ -59,7 +59,7 @@ export function DealersPage() {
         <Container>
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
-              <SectionHeader title="Founding dealer pilot can start free." description="Send us your inventory. We'll convert it into Dealer Match Cards for free during the pilot, then you can continue on a discounted subscription after launch." />
+              <SectionHeader title="Founding dealer pilot can start free." description="Send us your inventory. We'll convert it into seller posts for free during the pilot, then you can continue on a discounted subscription after launch." />
               <div className="mt-8 grid grid-cols-2 gap-4">
                 <StatCard label="Pilot cost" value="$0" tone="green" />
                 <StatCard label="Lead source" value="Buyer intent" tone="blue" />
@@ -80,12 +80,12 @@ export function FoundingDealerPage() {
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.18em] text-blue">Join the Free Founding Dealer Pilot</p>
-            <h1 className="mt-4 text-5xl font-black leading-tight text-navy">Send us your stock. We'll turn it into Match Cards.</h1>
+            <h1 className="mt-4 text-5xl font-black leading-tight text-navy">Send us your stock. We'll turn it into seller posts.</h1>
             <p className="mt-5 text-lg leading-8 text-charcoal/70">
               Buyers click "I'm looking for this" and you receive buyer-interest leads. No setup fee and no subscription while we test.
             </p>
             <div className="mt-8 grid gap-3">
-              {['Upload CSV, spreadsheet or paste inventory', 'Generate Dealer Match Cards', 'Receive buyer-interest leads', 'Respond to Ready-to-Buy Cards', 'Founding dealer badge', 'Discounted subscription after pilot'].map((item) => (
+              {['Upload CSV, spreadsheet or paste inventory', 'Generate seller posts', 'Receive buyer-interest leads', 'Respond to buyer posts', 'Founding dealer badge', 'Discounted subscription after pilot'].map((item) => (
                 <div key={item} className="rounded-lg bg-white p-4 text-sm font-bold text-navy shadow-soft ring-1 ring-charcoal/10">
                   {item}
                 </div>

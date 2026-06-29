@@ -17,11 +17,11 @@ export function HeroSection() {
             <span className="mt-2 block text-blue">Let sellers come to you.</span>
           </h1>
           <p className="mt-7 max-w-2xl text-xl font-semibold leading-8 text-white/72">
-            Tell us what car you want, your budget and where you're buying. Verified sellers respond with matching cars.
+            Tell us what car you want, your budget and where you're buying. Sellers respond with matching cars.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <ButtonLink to="/buyer/create-wanted-card" className="min-h-14 px-7 text-base">
-              Post the Car You Want <ArrowRight size={17} />
+              Post What You Want <ArrowRight size={17} />
             </ButtonLink>
             <ButtonLink to="/how-it-works" variant="secondary" className="min-h-14 px-7 text-base">
               See How It Works
@@ -70,9 +70,9 @@ function HeroDemo() {
 
         <div className="grid gap-3">
           {[
-            ['Northern Rivers Auto', '2019 Corolla Ascent Sport', '$19,990', 'Strong Match', 'green'],
-            ['Coastline Cars', '2018 Mazda 3 Maxx', '$17,500', 'Good Match', 'blue'],
-          ].map(([dealer, car, price, match, tone]) => (
+            ['Northern Rivers Auto', '2019 Corolla Ascent Sport', '$19,990 / 88,000km / Automatic', 'Strong Match', 'green'],
+            ['Coastline Cars', '2018 Mazda 3 Maxx', '$17,500 / 94,000km / Automatic', 'Good Match', 'blue'],
+          ].map(([dealer, car, details, match, tone]) => (
             <div key={car} className="rounded-xl bg-white p-5 shadow-soft">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <p className="text-xs font-black uppercase text-charcoal/50">{dealer}</p>
@@ -81,7 +81,7 @@ function HeroDemo() {
                 </span>
               </div>
               <p className="mt-2 text-lg font-black text-navy">{car}</p>
-              <p className="mt-1 text-sm font-semibold text-charcoal/72">{price} / 88,000km / Automatic</p>
+              <p className="mt-1 text-sm font-semibold text-charcoal/72">{details}</p>
             </div>
           ))}
         </div>

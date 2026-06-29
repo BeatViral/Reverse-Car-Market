@@ -141,7 +141,7 @@ function buildCardFromItems(items: InventoryItem[], id: string, title: string, b
     location: unique(items.map((item) => item.location)).join(' / '),
     radiusKm: 120,
     buyerUseCase,
-    description: 'A verified dealer has matching stock available. Tell us what you are looking for and we will create real buyer demand from your interest.',
+    description: 'A seller has a vehicle that may match this search.',
     possibleMatches: unique(items.map((item) => `${item.make} ${item.model}`)),
     ctaText: "Yes, I'm looking for this",
     status: 'draft',

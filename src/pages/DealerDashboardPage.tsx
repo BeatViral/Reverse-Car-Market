@@ -9,8 +9,8 @@ const navItems: Array<[string, string]> = [
   ['Overview', '/dealer/dashboard'],
   ['Inventory', '/dealer/dashboard'],
   ['Upload Inventory', '/dealer/inventory/upload'],
-  ['Dealer Match Cards', '/dealer/dashboard'],
-  ['Ready-to-Buy Cards', '/dealer/dashboard'],
+  ['Seller Posts', '/dealer/dashboard'],
+  ['Buyer Posts', '/dealer/dashboard'],
   ['Buyer Interest Leads', '/dealer/dashboard'],
   ['Responses Sent', '/dealer/dashboard'],
   ['Saved Searches', '/dealer/dashboard'],
@@ -23,11 +23,11 @@ export function DealerDashboardPage() {
   const generatedCards = generateDealerMatchCardsFromInventory(inventoryItems.filter((item) => item.dealerId === 'dealer-northern-rivers')).slice(0, 3);
 
   return (
-    <DashboardShell title="Dealer Dashboard" description="Upload owned inventory, generate clearly labelled Dealer Match Cards and respond to real buyer demand." navItems={navItems}>
+    <DashboardShell title="Dealer Dashboard" description="Upload owned inventory, generate seller posts and respond to real buyer demand." navItems={navItems}>
       <div className="grid gap-6">
         <div className="grid gap-4 md:grid-cols-4">
           <StatCard label="Inventory Items" value={String(inventoryItems.length)} />
-          <StatCard label="Match Cards" value={String(dealerMatchCards.length)} tone="amber" />
+          <StatCard label="Seller Posts" value={String(dealerMatchCards.length)} tone="amber" />
           <StatCard label="Buyer Leads" value={String(buyerInterests.length)} tone="green" />
           <StatCard label="Responses Sent" value={String(dealerResponses.length)} tone="dark" />
         </div>
@@ -46,8 +46,8 @@ export function DealerDashboardPage() {
           </div>
         </div>
         <div className="rounded-lg bg-white p-5 shadow-soft ring-1 ring-charcoal/10">
-          <h2 className="text-2xl font-black text-navy">Generated Dealer Match Card drafts</h2>
-          <p className="mt-1 text-sm text-charcoal/60">Review wording before publishing. These are dealer-created from real inventory.</p>
+          <h2 className="text-2xl font-black text-navy">Generated seller post drafts</h2>
+          <p className="mt-1 text-sm text-charcoal/60">Review wording before publishing. These are created from real inventory.</p>
           <div className="mt-5 grid gap-5 lg:grid-cols-2">
             {generatedCards.map((card) => (
               <DealerMatchCardView key={card.id} card={card} />
@@ -55,7 +55,7 @@ export function DealerDashboardPage() {
           </div>
         </div>
         <div className="rounded-lg bg-white p-5 shadow-soft ring-1 ring-charcoal/10">
-          <h2 className="text-2xl font-black text-navy">Open public Ready-to-Buy Cards</h2>
+          <h2 className="text-2xl font-black text-navy">Open public buyer posts</h2>
           <div className="mt-5 grid gap-5 lg:grid-cols-2">
             {buyerWantedCards.slice(0, 4).map((card) => (
               <BuyerWantedCardView key={card.id} card={card} />

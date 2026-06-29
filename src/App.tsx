@@ -9,6 +9,7 @@ import { BuyerDashboardPage } from './pages/BuyerDashboardPage';
 import { BuyersPage } from './pages/BuyersPage';
 import { CreateWantedCardPage } from './pages/CreateWantedCardPage';
 import { DealerDashboardPage } from './pages/DealerDashboardPage';
+import { DealerInventoryPage } from './pages/DealerInventoryPage';
 import { DealerRespondPage } from './pages/DealerRespondPage';
 import { DealersPage, FoundingDealerPage } from './pages/DealersPage';
 import { HomePage } from './pages/HomePage';
@@ -18,6 +19,7 @@ import { InventoryUploadPage } from './pages/InventoryUploadPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { PricingPage } from './pages/PricingPage';
 import { SearchPage } from './pages/SearchPage';
+import { SellersPage } from './pages/SellersPage';
 import { TrustPage } from './pages/TrustPage';
 import { WantedDetailPage } from './pages/WantedDetailPage';
 import type { UserRole } from './types';
@@ -36,6 +38,8 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="how-it-works" element={<HowItWorksPage />} />
           <Route path="buyers" element={<BuyersPage />} />
+          <Route path="sellers" element={<SellersPage />} />
+          <Route path="dealer-inventory" element={<DealerInventoryPage />} />
           <Route path="dealers" element={<DealersPage />} />
           <Route path="dealers/founding" element={<FoundingDealerPage />} />
           <Route path="pricing" element={<PricingPage />} />

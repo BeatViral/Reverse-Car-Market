@@ -8,8 +8,9 @@ import { cx } from '../lib/format';
 
 const navItems = [
   ['How It Works', '/how-it-works'],
-  ['Browse', '/browse'],
-  ['Dealers', '/dealers'],
+  ['Buyers', '/buyers'],
+  ['Sellers', '/sellers'],
+  ['Dealer Inventory', '/dealer-inventory'],
   ['Pricing', '/pricing'],
 ];
 
@@ -41,7 +42,7 @@ export function Layout() {
             <ButtonLink to="/auth" variant="secondary">
               Sign In
             </ButtonLink>
-            <ButtonLink to="/buyer/create-wanted-card">Post the Car You Want</ButtonLink>
+            <ButtonLink to="/buyer/create-wanted-card">Post What You Want</ButtonLink>
           </div>
           <button
             type="button"
@@ -61,7 +62,7 @@ export function Layout() {
                 </NavLink>
               ))}
               <ButtonLink to="/buyer/create-wanted-card" className="mt-2" onClick={() => setOpen(false)}>
-                Post the Car You Want
+                Post What You Want
               </ButtonLink>
             </Container>
           </div>
@@ -78,7 +79,7 @@ export function Layout() {
 function Footer() {
   const columns = [
     ['Company', ['About', 'How It Works', 'Contact']],
-    ['Marketplace', ['Buyers', 'Dealers', 'Browse Match Cards', 'Pricing']],
+    ['Marketplace', ['Buyers', 'Sellers', 'Dealer Inventory', 'Pricing']],
     ['Trust', ['Trust & Safety', 'No Fake Demand Policy', 'Dealer Verification', 'Buying Safety Checklist']],
     ['Legal', ['Terms', 'Privacy', 'Disclaimer']],
   ];
@@ -97,7 +98,11 @@ function Footer() {
                 <p className="text-sm font-black">{heading as string}</p>
                 <div className="mt-3 grid gap-2">
                   {(links as string[]).map((link) => (
-                    <Link key={link} to={link === 'How It Works' ? '/how-it-works' : link === 'Buyers' ? '/buyers' : link === 'Dealers' ? '/dealers' : link === 'Pricing' ? '/pricing' : link.includes('Browse') ? '/browse' : '/trust'} className="text-sm text-white/62 hover:text-white">
+                    <Link
+                      key={link}
+                      to={link === 'How It Works' ? '/how-it-works' : link === 'Buyers' ? '/buyers' : link === 'Sellers' ? '/sellers' : link === 'Dealer Inventory' ? '/dealer-inventory' : link === 'Pricing' ? '/pricing' : '/trust'}
+                      className="text-sm text-white/62 hover:text-white"
+                    >
                       {link}
                     </Link>
                   ))}

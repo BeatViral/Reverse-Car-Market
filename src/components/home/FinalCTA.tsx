@@ -10,10 +10,10 @@ export function FinalCTA() {
           <p className="mt-5 text-lg font-semibold text-white/78">Reverse Car Market starts with what buyers actually want.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <ButtonLink to="/buyer/create-wanted-card" variant="dark" className="min-h-14 px-7 text-base">
-              Post the Car You Want
+              Post What You Want
             </ButtonLink>
-            <ButtonLink to="/browse" variant="secondary" className="min-h-14 px-7 text-base">
-              Browse Match Cards
+            <ButtonLink to="/sellers" variant="secondary" className="min-h-14 px-7 text-base">
+              I Have a Car
             </ButtonLink>
           </div>
         </div>

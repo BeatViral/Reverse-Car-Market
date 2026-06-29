@@ -9,8 +9,8 @@ const navItems: Array<[string, string]> = [
   ['Dealers', '/admin/dashboard'],
   ['Dealer Verification', '/admin/dashboard'],
   ['Inventory', '/admin/dashboard'],
-  ['Ready-to-Buy Cards', '/admin/dashboard'],
-  ['Dealer Match Cards', '/admin/dashboard'],
+  ['Buyer Posts', '/admin/dashboard'],
+  ['Seller Posts', '/admin/dashboard'],
   ['Buyer Interests', '/admin/dashboard'],
   ['Responses', '/admin/dashboard'],
   ['Reports', '/admin/dashboard'],
@@ -21,14 +21,14 @@ const navItems: Array<[string, string]> = [
 
 export function AdminDashboardPage() {
   return (
-    <DashboardShell title="Admin Dashboard" description="Moderate cards, verify dealers, review leads and inspect conversion analytics." navItems={navItems}>
+    <DashboardShell title="Admin Dashboard" description="Moderate posts, verify dealers, review leads and inspect conversion analytics." navItems={navItems}>
       <div className="grid gap-6">
         <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
           <StatCard label="Buyers" value={String(users.filter((user) => user.role === 'buyer').length)} />
           <StatCard label="Dealers" value={String(dealers.length)} tone="green" />
           <StatCard label="Inventory Uploaded" value={String(inventoryItems.length)} tone="amber" />
-          <StatCard label="Dealer Match Cards" value={String(dealerMatchCards.length)} tone="dark" />
-          <StatCard label="Ready-to-Buy Cards" value={String(buyerWantedCards.length)} />
+          <StatCard label="Seller Posts" value={String(dealerMatchCards.length)} tone="dark" />
+          <StatCard label="Buyer Posts" value={String(buyerWantedCards.length)} />
           <StatCard label="Buyer Interests" value={String(buyerInterests.length)} tone="green" />
           <StatCard label="Dealer Responses" value={String(dealerResponses.length)} tone="amber" />
           <StatCard label="Conversion" value="6.8%" tone="dark" />

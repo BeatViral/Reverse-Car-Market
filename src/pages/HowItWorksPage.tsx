@@ -1,9 +1,12 @@
-import { ArrowRight, BadgeCheck, Car, FileText, MessageSquare, Sparkles } from 'lucide-react';
-import type { ReactNode } from 'react';
+import { ArrowRight, Car, MessageSquare, Search, Upload, type LucideIcon } from 'lucide-react';
 import { ButtonLink } from '../components/Button';
-import { BuyerWantedCardView, DealerMatchCardView, DealerPromptDisclaimer } from '../components/MarketplaceCards';
 import { Container, SectionHeader } from '../components/Section';
-import { buyerWantedCards, dealerMatchCards } from '../data/demo';
+
+const paths: Array<[LucideIcon, string, string]> = [
+  [Search, 'I want a car.', 'Post what you want. Sellers reply.'],
+  [Car, 'I have a car.', 'Post what you have. Buyers raise their hand.'],
+  [Upload, 'I have many cars.', 'Upload inventory. Generate seller posts automatically.'],
+];
 
 export function HowItWorksPage() {
   return (
@@ -12,42 +15,46 @@ export function HowItWorksPage() {
         <SectionHeader
           align="center"
           eyebrow="How it works"
-          title="The market starts with demand, then matches real stock to it."
-          description="Reverse Car Market supports two honest scenarios: real buyers post what they want, and verified dealers create clearly labelled Match Cards from inventory."
+          title="Three simple paths."
+          description="Reverse Car Market is built around plain intent: buyers say what they want, sellers show what they have, and dealers can turn inventory into seller posts."
         />
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
-          <FlowPanel
-            title="Scenario 1: Buyer starts"
-            intro='Buyer posts: "I am looking for a Toyota Corolla under $20k." Dealer replies: "I have a matching car."'
-            steps={[
-              [FileText, 'Buyer posts the car they want', 'Budget, location, must-haves and buying timeframe.'],
-              [Car, 'Dealer or seller responds', 'Only respond when there is a genuine matching vehicle.'],
-              [MessageSquare, 'Buyer compares offers', 'Price, kilometres, warranty, warnings and match score in one place.'],
-            ]}
-          >
-            <BuyerWantedCardView card={buyerWantedCards[0]} />
-          </FlowPanel>
-          <FlowPanel
-            title="Scenario 2: Dealer starts"
-            intro='Dealer has inventory and creates: "Looking for a Toyota Corolla under $20k?" Buyer clicks: "Yes, I am looking for this."'
-            steps={[
-              [BadgeCheck, 'Dealer uploads owned inventory', 'No scraping. Only stock the dealer owns or can represent.'],
-              [Sparkles, 'Dealer Match Card is published', 'It is labelled as dealer-created and never shown as buyer demand.'],
-              [FileText, 'Buyer interest becomes real demand', 'The buyer can post or confirm a real Ready-to-Buy Card.'],
-            ]}
-          >
-            <DealerMatchCardView card={dealerMatchCards[0]} />
-          </FlowPanel>
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {paths.map(([Icon, title, text]) => (
+            <article key={title} className="rounded-2xl bg-white p-6 shadow-soft ring-1 ring-charcoal/10">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue text-white">
+                <Icon size={22} />
+              </span>
+              <h2 className="mt-6 text-3xl font-black text-navy">{title}</h2>
+              <p className="mt-3 text-base font-semibold leading-7 text-charcoal/70">{text}</p>
+            </article>
+          ))}
         </div>
-        <div className="mt-8">
-          <DealerPromptDisclaimer />
+
+        <div className="mt-10 rounded-2xl bg-white p-6 shadow-card ring-1 ring-charcoal/10">
+          <div className="grid gap-5 lg:grid-cols-2">
+            <MechanicPanel
+              eyebrow="Buyer says"
+              first="I want this car."
+              secondEyebrow="Seller replies"
+              second="I have it."
+            />
+            <MechanicPanel
+              eyebrow="Seller says"
+              first="Are you looking for this kind of car?"
+              secondEyebrow="Buyer replies"
+              second="Yes, I am."
+            />
+          </div>
         </div>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <ButtonLink to="/buyer/create-wanted-card">
-            Post the Car You Want <ArrowRight size={17} />
+            Post What You Want <ArrowRight size={17} />
           </ButtonLink>
-          <ButtonLink to="/dealers/founding" variant="dark">
-            Join as Founding Dealer
+          <ButtonLink to="/sellers" variant="dark">
+            I Have a Car
+          </ButtonLink>
+          <ButtonLink to="/dealer-inventory" variant="secondary">
+            Dealer Inventory
           </ButtonLink>
         </div>
       </Container>
@@ -55,33 +62,16 @@ export function HowItWorksPage() {
   );
 }
 
-function FlowPanel({
-  title,
-  intro,
-  steps,
-  children,
-}: {
-  title: string;
-  intro: string;
-  steps: Array<[typeof FileText, string, string]>;
-  children: ReactNode;
-}) {
+function MechanicPanel({ eyebrow, first, secondEyebrow, second }: { eyebrow: string; first: string; secondEyebrow: string; second: string }) {
   return (
-    <div className="rounded-lg bg-white p-6 shadow-soft ring-1 ring-charcoal/10">
-      <h2 className="text-2xl font-black text-navy">{title}</h2>
-      <p className="mt-3 text-sm leading-6 text-charcoal/68">{intro}</p>
-      <div className="my-6">{children}</div>
-      <div className="grid gap-3">
-        {steps.map(([Icon, stepTitle, text]) => (
-          <div key={stepTitle} className="flex gap-3 rounded-lg bg-ice p-4">
-            <Icon className="h-5 w-5 shrink-0 text-blue" />
-            <div>
-              <p className="font-black text-navy">{stepTitle}</p>
-              <p className="mt-1 text-sm text-charcoal/65">{text}</p>
-            </div>
-          </div>
-        ))}
+    <div className="rounded-xl bg-ice p-5">
+      <div className="flex items-center gap-3">
+        <MessageSquare className="h-5 w-5 text-blue" />
+        <p className="text-xs font-black uppercase tracking-[0.16em] text-blue">{eyebrow}</p>
       </div>
+      <p className="mt-3 rounded-lg bg-white p-4 text-2xl font-black leading-tight text-navy shadow-soft">"{first}"</p>
+      <p className="mt-5 text-xs font-black uppercase tracking-[0.16em] text-charcoal/45">{secondEyebrow}</p>
+      <p className="mt-2 rounded-lg bg-navy p-4 text-2xl font-black leading-tight text-white shadow-soft">"{second}"</p>
     </div>
   );
 }

@@ -13,14 +13,14 @@ export function DealerSection() {
               <p className="text-sm font-black uppercase tracking-[0.18em] text-amber">For founding dealers</p>
               <h2 className="mt-3 text-4xl font-black leading-[0.98] sm:text-6xl">Turn stock into buyer interest.</h2>
               <p className="mt-4 max-w-2xl text-white/68">
-                Upload inventory. Generate honest "Looking for this?" cards. Capture real buyer intent.
+                Upload inventory. Generate honest seller posts. Capture real buyer intent.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <ButtonLink to="/dealers/founding" variant="secondary">
                   Join free pilot
                 </ButtonLink>
-                <ButtonLink to="/dealers" variant="ghost" className="text-white hover:bg-white/10">
-                  Dealer tools
+                <ButtonLink to="/dealer-inventory" variant="ghost" className="text-white hover:bg-white/10">
+                  Dealer Inventory
                 </ButtonLink>
               </div>
             </div>
@@ -39,7 +39,7 @@ function DealerMiniFlow() {
     <div className="grid gap-3">
       {[
         [BadgeCheck, 'Dealer uploads stock'],
-        [Sparkles, 'Match Cards are generated'],
+        [Sparkles, 'Seller posts are generated'],
         [MessageSquare, 'Buyer raises their hand'],
       ].map(([Icon, label]) => {
         const IconComponent = Icon as typeof BadgeCheck;
@@ -53,7 +53,7 @@ function DealerMiniFlow() {
         );
       })}
       <p className="rounded-lg bg-amber/10 p-3 text-sm font-semibold leading-6 text-charcoal/72">
-        Clearly labelled dealer prompt. Never fake buyer demand.
+        Created from real inventory. Never fake buyer demand.
       </p>
     </div>
   );

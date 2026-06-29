@@ -4,10 +4,10 @@ import { Container, SectionHeader } from '../components/Section';
 import { buyerWantedCards, dealerMatchCards } from '../data/demo';
 import { cx } from '../lib/format';
 
-const tabs = ['Looking for this?', 'Buyers wanted cars', 'Popular searches'] as const;
+const tabs = ['Seller posts', 'Buyer posts', 'Popular searches'] as const;
 
 export function BrowsePage() {
-  const [tab, setTab] = useState<(typeof tabs)[number]>('Looking for this?');
+  const [tab, setTab] = useState<(typeof tabs)[number]>('Seller posts');
   const popular = useMemo(
     () => ['Toyota Corolla under $20k', 'Reliable hatchback under $18k', 'Family SUV under $35k', 'Work ute under $40k', 'Hybrid SUV under $45k'],
     [],
@@ -17,9 +17,9 @@ export function BrowsePage() {
     <section className="section-pad bg-ice">
       <Container>
         <SectionHeader
-          eyebrow="Browse demand-shaped cards"
-          title="Browse cards without falling into a listing grid."
-          description="Public cards show buyer intent and dealer-created prompts, not endless vehicle listings."
+          eyebrow="Browse the market"
+          title="See what buyers want and what sellers have."
+          description="Buyer posts show real demand. Seller posts show real vehicles that may fit what buyers are looking for."
         />
         <div className="mt-8 flex flex-wrap gap-2">
           {tabs.map((item) => (
@@ -34,14 +34,14 @@ export function BrowsePage() {
           ))}
         </div>
         <div className="mt-8">
-          {tab === 'Looking for this?' ? (
+          {tab === 'Seller posts' ? (
             <div className="grid gap-5 lg:grid-cols-2">
               {dealerMatchCards.map((card) => (
                 <DealerMatchCardView key={card.id} card={card} />
               ))}
             </div>
           ) : null}
-          {tab === 'Buyers wanted cars' ? (
+          {tab === 'Buyer posts' ? (
             <div className="grid gap-5 lg:grid-cols-2">
               {buyerWantedCards
                 .filter((card) => card.publicVisibility)

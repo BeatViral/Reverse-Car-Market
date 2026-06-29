@@ -67,10 +67,10 @@ export function BuyerWantedCardView({
       {action ? (
         <div className="mt-6 flex flex-wrap gap-3">
           <ButtonLink to={`/dealer/respond/${card.id}`} variant="dark">
-            <Car size={17} /> Offer matching car
+            <Car size={17} /> Reply with a Car
           </ButtonLink>
           <ButtonLink to={`/buyer/wanted/${card.id}`} variant="secondary">
-            View card
+            View post
           </ButtonLink>
         </div>
       ) : null}
@@ -92,14 +92,14 @@ export function DealerMatchCardView({
     <article className="relative overflow-hidden rounded-2xl border-2 border-amber/45 bg-[#fff8ea] p-6 shadow-[0_24px_70px_rgba(245,165,36,0.16)]">
       <div className="absolute inset-x-0 top-0 h-1.5 bg-amber" />
       <div className="flex flex-wrap items-center gap-2">
-        <Chip tone="amber">Dealer Match Card</Chip>
+        <Chip tone="amber">SELLER POST</Chip>
         <Chip tone={dealer?.verifiedStatus === 'verified' ? 'green' : 'slate'}>
           <BadgeCheck size={13} className="mr-1" />
-          {dealer?.verifiedStatus === 'verified' ? 'Verified Dealer' : 'Dealer pending verification'}
+          {dealer?.verifiedStatus === 'verified' ? 'Verified Dealer' : 'Private Seller'}
         </Chip>
       </div>
       <h3 className="mt-5 text-2xl font-black leading-[1.05] text-navy">{card.title}</h3>
-      <p className="mt-4 text-sm font-semibold leading-6 text-charcoal/70">{compact ? 'A verified dealer has matching stock available.' : card.description}</p>
+      <p className="mt-4 text-sm font-semibold leading-6 text-charcoal/70">{compact ? 'A seller has a vehicle that may match this search.' : 'A seller has a vehicle that may match this search.'}</p>
       <div className="mt-5 flex flex-wrap gap-2">
         <Chip tone="amber">
           Price: {formatCurrency(card.priceMin, true)}-{formatCurrency(card.priceMax, true)}
@@ -112,7 +112,7 @@ export function DealerMatchCardView({
         <Chip>{card.buyerUseCase}</Chip>
       </div>
       <p className="mt-5 border-t border-amber/25 pt-4 text-xs font-black uppercase tracking-[0.08em] text-charcoal/62">
-        Dealer-created from real inventory.
+        Created from real vehicle details.
       </p>
       {action ? (
         <div className="mt-6 flex flex-wrap gap-3">
@@ -120,7 +120,7 @@ export function DealerMatchCardView({
             <Sparkles size={17} /> {card.ctaText}
           </ButtonLink>
           <ButtonLink to="/buyer/create-wanted-card" variant="secondary">
-            Post the Car You Want
+            Post What You Want
           </ButtonLink>
         </div>
       ) : null}
@@ -253,11 +253,11 @@ export function TrustChecklist() {
   const items = [
     ['Verified dealer profiles', ShieldCheck],
     ['Buyer contact visibility controls', Eye],
-    ['No fake Ready-to-Buy Cards', CheckCircle2],
-    ['Dealer Match Cards are clearly labelled', BadgeCheck],
+    ['No fake buyer posts', CheckCircle2],
+    ['Seller posts are clearly labelled', BadgeCheck],
     ['No scraping third-party sites', AlertTriangle],
     ['Match-score warnings', MessageSquare],
-    ['Buyers can close cards anytime', Clock],
+    ['Buyers can close posts anytime', Clock],
     ['PPSR and car history guidance', MapPin],
   ];
 
@@ -279,7 +279,7 @@ export function TrustChecklist() {
 export function DealerPromptDisclaimer() {
   return (
     <div className="rounded-lg border border-amber/30 bg-amber/10 p-4 text-sm leading-6 text-charcoal/75">
-      <strong className="text-navy">No fake demand:</strong> Ready-to-Buy Cards are posted by real buyers. Dealer Match Cards are dealer-created from real inventory.
+      <strong className="text-navy">No fake demand:</strong> Buyer posts come from real buyers. Seller posts come from real vehicle details.
     </div>
   );
 }
@@ -289,7 +289,7 @@ export function CardLinkList({ cards }: { cards: DealerMatchCard[] }) {
     <div className="space-y-3">
       {cards.map((card) => (
         <Link key={card.id} to={`/interest/${card.id}`} className="block rounded-lg bg-white p-4 shadow-soft ring-1 ring-charcoal/10 transition hover:-translate-y-0.5">
-          <p className="text-xs font-bold uppercase text-amber">Dealer Match Card</p>
+          <p className="text-xs font-bold uppercase text-amber">Seller Post</p>
           <p className="mt-1 font-black text-navy">{card.title}</p>
           <p className="mt-2 text-sm text-charcoal/65">{card.interestsCount} buyer-interest leads captured</p>
         </Link>

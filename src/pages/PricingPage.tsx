@@ -12,7 +12,7 @@ export function PricingPage() {
           align="center"
           eyebrow="Pricing"
           title="Free for buyers. Subscription-ready for dealers."
-          description="The founding dealer pilot is free during launch. Paid dealer plans are structured for Stripe subscriptions when billing is switched on."
+          description="Buyers can post what they want for free. The founding dealer pilot is free during launch."
         />
         <div className="mt-12 grid gap-5 lg:grid-cols-5">
           {pricingTiers.map((tier) => (
@@ -32,7 +32,7 @@ export function PricingPage() {
           ))}
         </div>
         <div className="mt-10 text-center">
-          <ButtonLink to="/dealers/founding">Join as Founding Dealer</ButtonLink>
+          <ButtonLink to="/dealers/founding">Join Founding Dealer Pilot</ButtonLink>
         </div>
       </Container>
     </section>

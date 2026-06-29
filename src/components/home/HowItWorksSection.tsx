@@ -1,8 +1,8 @@
 import { Container } from '../Section';
 
 const steps = [
-  ['Post the car you want', 'Tell us your budget, location and must-haves.'],
-  ['Sellers respond', 'Verified sellers reply only when they have a matching car.'],
+  ['Post what you want', 'Tell us your budget, location and must-haves.'],
+  ['Sellers respond', 'Sellers reply only when they have a matching car.'],
   ['Compare clearly', 'Price, kilometres, warranty, warnings and match score in one place.'],
 ];
 

@@ -503,27 +503,27 @@ export const pricingTiers: PricingTier[] = [
   {
     name: 'Buyer',
     price: 'Free',
-    description: 'Post the car you want and compare matching offers.',
-    features: ['Post the car you want', 'Compare dealer and seller responses', 'Saved offers', 'Contact controls'],
+    description: 'Post what you want and compare matching offers.',
+    features: ['Post What You Want', 'Compare dealer and seller responses', 'Saved offers', 'Contact controls'],
   },
   {
     name: 'Founding Dealer Pilot',
     price: 'Free during pilot',
     description: 'Help shape the market before paid subscriptions begin.',
-    features: ['Dealer profile', 'Upload inventory', 'Generate Dealer Match Cards', 'Receive buyer-interest leads', 'Founding dealer badge'],
+    features: ['Dealer profile', 'Upload inventory', 'Generate seller posts', 'Receive buyer-interest leads', 'Founding dealer badge'],
     highlighted: true,
   },
   {
     name: 'Starter Dealer',
     price: '$99/month',
     description: 'For smaller dealers testing buyer-first demand.',
-    features: ['Dealer profile', 'Upload inventory', 'Create Dealer Match Cards', 'Limited Ready-to-Buy Card responses', 'Basic buyer-interest alerts'],
+    features: ['Dealer profile', 'Upload inventory', 'Create seller posts', 'Limited buyer post responses', 'Basic buyer-interest alerts'],
   },
   {
     name: 'Pro Dealer',
     price: '$199/month',
     description: 'For dealers who want full lead flow and saved demand searches.',
-    features: ['Unlimited Dealer Match Cards', 'Unlimited responses', 'Saved searches', 'Regional alerts', 'Inventory grouping engine', 'Lead dashboard'],
+    features: ['Unlimited seller posts', 'Unlimited responses', 'Saved searches', 'Regional alerts', 'Inventory grouping engine', 'Lead dashboard'],
     highlighted: true,
   },
   {
@@ -540,7 +540,7 @@ export const outreachCopy = {
 
 I'm building Reverse Car Market, a buyer-first car marketplace where buyers post the car they want and dealers respond with matching stock.
 
-We're also testing Dealer Match Cards. You send us your current inventory, and we turn it into simple buyer-interest cards like:
+We're also testing Dealer Inventory. You send us your current inventory, and we turn it into simple seller posts like:
 
 "Looking for a Toyota Corolla under $20k?"
 "Looking for a reliable SUV under $35k?"
@@ -550,7 +550,7 @@ Buyers click "I'm interested," and we send you the buyer-interest lead.
 
 We're onboarding a small group of founding dealers free during the pilot. No setup fee and no subscription while we test.
 
-If you're interested, send a stock list, CSV, spreadsheet or link to your inventory page and we'll create the first cards for you.
+If you're interested, send a stock list, CSV, spreadsheet or link to your inventory page and we'll create the first seller posts for you.
 
 Regards,
 Mahmood

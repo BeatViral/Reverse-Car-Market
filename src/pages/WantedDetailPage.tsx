@@ -12,7 +12,7 @@ export function WantedDetailPage() {
   return (
     <section className="section-pad bg-ice">
       <Container>
-        <SectionHeader eyebrow="Ready-to-Buy Card Detail" title={card.title} description="Review criteria, compare dealer and seller responses, then accept, reject, pause or close the card." />
+        <SectionHeader eyebrow="Buyer post detail" title={card.title} description="Review criteria, compare dealer and seller responses, then accept, reject, pause or close the post." />
         <div className="mt-8 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="grid h-fit gap-5">
             <BuyerWantedCardView card={card} action={false} />
@@ -25,8 +25,8 @@ export function WantedDetailPage() {
                 <p><strong>Maximum responses:</strong> {card.maxSellerResponses}</p>
               </div>
               <div className="mt-5 flex flex-wrap gap-3">
-                <Button type="button" variant="secondary">Pause card</Button>
-                <Button type="button" variant="dark">Close card</Button>
+                <Button type="button" variant="secondary">Pause post</Button>
+                <Button type="button" variant="dark">Close post</Button>
               </div>
             </div>
           </div>

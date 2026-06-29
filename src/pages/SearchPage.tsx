@@ -17,9 +17,9 @@ export function SearchPage() {
     <section className="section-pad bg-white">
       <Container>
         <SectionHeader
-          eyebrow="Buyer-facing search"
+          eyebrow="Find what you're looking for"
           title="What car are you looking for?"
-          description="Search converts intent into demand. If there is no match, post the car you want and let sellers come to you."
+          description="Search normally. If you do not find the right match, post what you want and let sellers come to you."
         />
         <div className="mt-8 rounded-lg bg-ice p-4 shadow-soft ring-1 ring-charcoal/10">
           <label className="grid gap-2 text-sm font-black text-navy">
@@ -41,7 +41,7 @@ export function SearchPage() {
         {results ? (
           <div className="mt-8 grid gap-6">
             <div className="rounded-lg bg-navy p-5 text-white">
-              <p className="text-sm font-black uppercase tracking-[0.16em] text-white/55">Parsed intent</p>
+              <p className="text-sm font-black uppercase tracking-[0.16em] text-white/55">We understood</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {[
                   results.intent.make,
@@ -64,7 +64,7 @@ export function SearchPage() {
             {results.dealerMatches.length || results.wantedCards.length ? (
               <>
                 <div>
-                  <h2 className="text-2xl font-black text-navy">Matching Dealer Match Cards</h2>
+                  <h2 className="text-2xl font-black text-navy">Seller posts that may fit</h2>
                   <div className="mt-4 grid gap-5 lg:grid-cols-2">
                     {results.dealerMatches.map((card) => (
                       <DealerMatchCardView key={card.id} card={card} />
@@ -72,7 +72,7 @@ export function SearchPage() {
                   </div>
                 </div>
                 <div>
-                  <h2 className="text-2xl font-black text-navy">Related public Ready-to-Buy Cards</h2>
+                  <h2 className="text-2xl font-black text-navy">Buyer posts</h2>
                   <div className="mt-4 grid gap-5 lg:grid-cols-2">
                     {results.wantedCards.map((card) => (
                       <BuyerWantedCardView key={card.id} card={card} />
@@ -82,10 +82,10 @@ export function SearchPage() {
               </>
             ) : (
               <div className="rounded-lg bg-ice p-8 text-center shadow-soft ring-1 ring-charcoal/10">
-                <h2 className="text-3xl font-black text-navy">No matching cards yet.</h2>
+                <h2 className="text-3xl font-black text-navy">No clear match yet.</h2>
                 <p className="mt-3 text-charcoal/70">Post what you want and let sellers come to you.</p>
                 <div className="mt-6">
-                  <ButtonLink to="/buyer/create-wanted-card">Post the Car You Want</ButtonLink>
+                  <ButtonLink to="/buyer/create-wanted-card">Post What You Want</ButtonLink>
                 </div>
               </div>
             )}

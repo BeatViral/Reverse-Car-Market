@@ -10,8 +10,8 @@ const navItems: Array<[string, string]> = [
   ['Overview', '/dealer/dashboard'],
   ['Inventory', '/dealer/dashboard'],
   ['Upload Inventory', '/dealer/inventory/upload'],
-  ['Dealer Match Cards', '/dealer/dashboard'],
-  ['Ready-to-Buy Cards', '/dealer/dashboard'],
+  ['Seller Posts', '/dealer/dashboard'],
+  ['Buyer Posts', '/dealer/dashboard'],
   ['Subscription', '/dealer/dashboard'],
 ];
 
@@ -22,7 +22,7 @@ export function InventoryUploadPage() {
   const generated = useMemo(() => generateDealerMatchCardsFromInventory(inventoryItems.filter((item) => item.dealerId === 'dealer-northern-rivers')).slice(0, 4), []);
 
   return (
-    <DashboardShell title="Upload Inventory" description="Add dealer-owned stock, then generate honest Dealer Match Cards from that inventory." navItems={navItems}>
+    <DashboardShell title="Upload Inventory" description="Add dealer-owned stock, then generate seller posts from that inventory." navItems={navItems}>
       <div className="grid gap-6 xl:grid-cols-[1fr_0.9fr]">
         <div className="rounded-lg bg-white p-6 shadow-soft ring-1 ring-charcoal/10">
           <div className="rounded-lg bg-amber/10 p-4 text-sm font-semibold leading-6 text-charcoal/75">
@@ -53,7 +53,7 @@ export function InventoryUploadPage() {
           <div className="mt-6 flex flex-wrap gap-3">
             <Button type="button">Save inventory</Button>
             <Button type="button" variant="secondary">
-              Generate Match Cards
+              Generate Seller Posts
             </Button>
           </div>
         </div>

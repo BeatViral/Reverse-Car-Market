@@ -7,7 +7,7 @@ import type { BuyerWantedCard } from '../types';
 
 const navItems: Array<[string, string]> = [
   ['Overview', '/buyer/dashboard'],
-  ['Post the Car You Want', '/buyer/create-wanted-card'],
+  ['Post What You Want', '/buyer/create-wanted-card'],
   ['Offers Received', '/buyer/dashboard'],
   ['Messages', '/buyer/dashboard'],
   ['Account Settings', '/buyer/dashboard'],
@@ -43,12 +43,12 @@ export function CreateWantedCardPage() {
     maxSellerResponses: structured.maxSellerResponses ?? 8,
     publicVisibility: structured.publicVisibility ?? true,
     status: 'open',
-    aiSummary: structured.aiSummary ?? 'Preview Ready-to-Buy Card.',
+    aiSummary: structured.aiSummary ?? 'Preview buyer post.',
     createdAt: new Date().toISOString(),
   };
 
   return (
-    <DashboardShell title="Post the Car You Want" description="Type naturally, then refine the criteria sellers will match against." navItems={navItems}>
+    <DashboardShell title="Post What You Want" description="Type naturally, then refine the criteria sellers will match against." navItems={navItems}>
       <div className="grid gap-6 xl:grid-cols-[1fr_0.9fr]">
         <form className="rounded-lg bg-white p-6 shadow-soft ring-1 ring-charcoal/10">
           <label className="grid gap-2 text-sm font-black text-navy">
@@ -104,7 +104,7 @@ export function CreateWantedCardPage() {
             </label>
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button type="button">Post the Car You Want</Button>
+            <Button type="button">Post What You Want</Button>
             <Button type="button" variant="secondary">
               Save draft
             </Button>
@@ -115,7 +115,7 @@ export function CreateWantedCardPage() {
           <div className="rounded-lg bg-amber/10 p-5 shadow-soft ring-1 ring-amber/20">
             <h2 className="font-black text-navy">Suggested missing questions</h2>
             <div className="mt-3 grid gap-2">
-              {(questions.length ? questions : ['You have enough detail to publish this card.']).map((question) => (
+              {(questions.length ? questions : ['You have enough detail to publish this post.']).map((question) => (
                 <p key={question} className="rounded-md bg-white px-3 py-2 text-sm font-semibold text-charcoal/70">
                   {question}
                 </p>
