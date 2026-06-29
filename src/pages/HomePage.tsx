@@ -1,9 +1,9 @@
-import { CardTypesSection } from '../components/home/CardTypesSection';
-import { DealerSection } from '../components/home/DealerSection';
+import { BenefitsSection } from '../components/home/BenefitsSection';
 import { FinalCTA } from '../components/home/FinalCTA';
 import { HeroSection } from '../components/home/HeroSection';
 import { HowItWorksSection } from '../components/home/HowItWorksSection';
 import { MarketFlippedSection } from '../components/home/MarketFlippedSection';
+import { TestimonialsSection } from '../components/home/TestimonialsSection';
 
 export function HomePage() {
   return (
@@ -11,8 +11,8 @@ export function HomePage() {
       <HeroSection />
       <MarketFlippedSection />
       <HowItWorksSection />
-      <CardTypesSection />
-      <DealerSection />
+      <TestimonialsSection />
+      <BenefitsSection />
       <FinalCTA />
     </>
   );

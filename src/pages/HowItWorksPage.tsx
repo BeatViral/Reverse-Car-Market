@@ -15,7 +15,7 @@ export function HowItWorksPage() {
         <SectionHeader
           align="center"
           eyebrow="How it works"
-          title="Three simple paths."
+          title="How the reverse market works."
           description="Reverse Car Market is built around plain intent: buyers say what they want, sellers show what they have, and dealers can turn inventory into seller posts."
         />
         <div className="mt-12 grid gap-5 md:grid-cols-3">

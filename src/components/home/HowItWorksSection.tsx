@@ -12,7 +12,7 @@ export function HowItWorksSection() {
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-black uppercase tracking-[0.18em] text-blue">How it works</p>
-          <h2 className="mt-3 text-4xl font-black leading-none text-navy sm:text-6xl">Three moves. No maze.</h2>
+          <h2 className="mt-3 text-3xl font-black leading-tight text-navy sm:text-5xl">A simpler way to find the right car.</h2>
         </div>
         <div className="mt-9 grid gap-4 md:grid-cols-3">
           {steps.map(([title, text], index) => (
