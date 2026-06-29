@@ -13,14 +13,14 @@ export function HowItWorksPage() {
           align="center"
           eyebrow="How it works"
           title="The market starts with demand, then matches real stock to it."
-          description="Reverse Car Market supports two honest scenarios: real buyers create Request Cards, and verified dealers create clearly labelled Match Cards from inventory."
+          description="Reverse Car Market supports two honest scenarios: real buyers post what they want, and verified dealers create clearly labelled Match Cards from inventory."
         />
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <FlowPanel
             title="Scenario 1: Buyer starts"
             intro='Buyer posts: "I am looking for a Toyota Corolla under $20k." Dealer replies: "I have a matching car."'
             steps={[
-              [FileText, 'Buyer creates a Request Card', 'Budget, location, must-haves and buying timeframe.'],
+              [FileText, 'Buyer posts the car they want', 'Budget, location, must-haves and buying timeframe.'],
               [Car, 'Dealer or seller responds', 'Only respond when there is a genuine matching vehicle.'],
               [MessageSquare, 'Buyer compares offers', 'Price, kilometres, warranty, warnings and match score in one place.'],
             ]}
@@ -33,7 +33,7 @@ export function HowItWorksPage() {
             steps={[
               [BadgeCheck, 'Dealer uploads owned inventory', 'No scraping. Only stock the dealer owns or can represent.'],
               [Sparkles, 'Dealer Match Card is published', 'It is labelled as dealer-created and never shown as buyer demand.'],
-              [FileText, 'Buyer interest becomes real demand', 'The buyer can create or confirm a real Buyer Request Card.'],
+              [FileText, 'Buyer interest becomes real demand', 'The buyer can post or confirm a real Ready-to-Buy Card.'],
             ]}
           >
             <DealerMatchCardView card={dealerMatchCards[0]} />
@@ -44,7 +44,7 @@ export function HowItWorksPage() {
         </div>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <ButtonLink to="/buyer/create-wanted-card">
-            Post a Car Request <ArrowRight size={17} />
+            Post the Car You Want <ArrowRight size={17} />
           </ButtonLink>
           <ButtonLink to="/dealers/founding" variant="dark">
             Join as Founding Dealer

@@ -11,7 +11,7 @@ const navItems: Array<[string, string]> = [
   ['Inventory', '/dealer/dashboard'],
   ['Upload Inventory', '/dealer/inventory/upload'],
   ['Dealer Match Cards', '/dealer/dashboard'],
-  ['Buyer Request Cards', '/dealer/dashboard'],
+  ['Ready-to-Buy Cards', '/dealer/dashboard'],
   ['Subscription', '/dealer/dashboard'],
 ];
 

@@ -19,7 +19,7 @@ export function SearchPage() {
         <SectionHeader
           eyebrow="Buyer-facing search"
           title="What car are you looking for?"
-          description="Search converts intent into demand. If there is no match, create a Buyer Request Card and let sellers come to you."
+          description="Search converts intent into demand. If there is no match, post the car you want and let sellers come to you."
         />
         <div className="mt-8 rounded-lg bg-ice p-4 shadow-soft ring-1 ring-charcoal/10">
           <label className="grid gap-2 text-sm font-black text-navy">
@@ -72,7 +72,7 @@ export function SearchPage() {
                   </div>
                 </div>
                 <div>
-                  <h2 className="text-2xl font-black text-navy">Related public Buyer Request Cards</h2>
+                  <h2 className="text-2xl font-black text-navy">Related public Ready-to-Buy Cards</h2>
                   <div className="mt-4 grid gap-5 lg:grid-cols-2">
                     {results.wantedCards.map((card) => (
                       <BuyerWantedCardView key={card.id} card={card} />
@@ -85,7 +85,7 @@ export function SearchPage() {
                 <h2 className="text-3xl font-black text-navy">No matching cards yet.</h2>
                 <p className="mt-3 text-charcoal/70">Post what you want and let sellers come to you.</p>
                 <div className="mt-6">
-                  <ButtonLink to="/buyer/create-wanted-card">Create Request Card</ButtonLink>
+                  <ButtonLink to="/buyer/create-wanted-card">Post the Car You Want</ButtonLink>
                 </div>
               </div>
             )}

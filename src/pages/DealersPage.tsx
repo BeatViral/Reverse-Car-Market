@@ -7,7 +7,7 @@ import { dealerMatchCards } from '../data/demo';
 const features = [
   [Database, 'Upload inventory', 'Manual entry, CSV upload, pasted inventory text or a permitted inventory URL.'],
   [FileSpreadsheet, 'Create Dealer Match Cards', 'Convert owned stock into honest prompts buyers can raise their hand on.'],
-  [MessageSquareReply, 'Respond to Buyer Request Cards', 'Reply only when your stock genuinely fits what a buyer requested.'],
+  [MessageSquareReply, 'Respond to Ready-to-Buy Cards', 'Reply only when your stock genuinely fits what a buyer wants.'],
   [BellRing, 'Receive buyer-interest leads', 'Buyers confirm interest before dealers see lead details.'],
   [LineChart, 'Demand insights', 'See which price bands, models and use cases buyers are requesting.'],
   [BadgeCheck, 'Founding dealer pilot', 'Join free during pilot and keep a discounted monthly path after launch.'],
@@ -22,7 +22,7 @@ export function DealersPage() {
             <p className="text-sm font-black uppercase tracking-[0.18em] text-amber">For dealers</p>
             <h1 className="mt-4 text-5xl font-black leading-tight">See demand before buyers walk into someone else's yard.</h1>
             <p className="mt-5 text-lg leading-8 text-white/70">
-              Turn inventory into buyer-interest cards, respond to real Buyer Request Cards and build a lead pipeline around demand instead of impressions.
+              Turn inventory into buyer-interest cards, respond to real Ready-to-Buy Cards and build a lead pipeline around demand instead of impressions.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <ButtonLink to="/dealers/founding" variant="secondary">
@@ -85,7 +85,7 @@ export function FoundingDealerPage() {
               Buyers click "I'm looking for this" and you receive buyer-interest leads. No setup fee and no subscription while we test.
             </p>
             <div className="mt-8 grid gap-3">
-              {['Upload CSV, spreadsheet or paste inventory', 'Generate Dealer Match Cards', 'Receive buyer-interest leads', 'Respond to Buyer Request Cards', 'Founding dealer badge', 'Discounted subscription after pilot'].map((item) => (
+              {['Upload CSV, spreadsheet or paste inventory', 'Generate Dealer Match Cards', 'Receive buyer-interest leads', 'Respond to Ready-to-Buy Cards', 'Founding dealer badge', 'Discounted subscription after pilot'].map((item) => (
                 <div key={item} className="rounded-lg bg-white p-4 text-sm font-bold text-navy shadow-soft ring-1 ring-charcoal/10">
                   {item}
                 </div>

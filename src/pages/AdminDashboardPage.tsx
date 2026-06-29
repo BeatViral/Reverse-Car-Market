@@ -9,7 +9,7 @@ const navItems: Array<[string, string]> = [
   ['Dealers', '/admin/dashboard'],
   ['Dealer Verification', '/admin/dashboard'],
   ['Inventory', '/admin/dashboard'],
-  ['Buyer Request Cards', '/admin/dashboard'],
+  ['Ready-to-Buy Cards', '/admin/dashboard'],
   ['Dealer Match Cards', '/admin/dashboard'],
   ['Buyer Interests', '/admin/dashboard'],
   ['Responses', '/admin/dashboard'],
@@ -28,7 +28,7 @@ export function AdminDashboardPage() {
           <StatCard label="Dealers" value={String(dealers.length)} tone="green" />
           <StatCard label="Inventory Uploaded" value={String(inventoryItems.length)} tone="amber" />
           <StatCard label="Dealer Match Cards" value={String(dealerMatchCards.length)} tone="dark" />
-          <StatCard label="Buyer Request Cards" value={String(buyerWantedCards.length)} />
+          <StatCard label="Ready-to-Buy Cards" value={String(buyerWantedCards.length)} />
           <StatCard label="Buyer Interests" value={String(buyerInterests.length)} tone="green" />
           <StatCard label="Dealer Responses" value={String(dealerResponses.length)} tone="amber" />
           <StatCard label="Conversion" value="6.8%" tone="dark" />

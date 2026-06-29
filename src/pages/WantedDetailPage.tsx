@@ -12,7 +12,7 @@ export function WantedDetailPage() {
   return (
     <section className="section-pad bg-ice">
       <Container>
-        <SectionHeader eyebrow="Request Card Detail" title={card.title} description="Review criteria, compare dealer and seller responses, then accept, reject, pause or close the card." />
+        <SectionHeader eyebrow="Ready-to-Buy Card Detail" title={card.title} description="Review criteria, compare dealer and seller responses, then accept, reject, pause or close the card." />
         <div className="mt-8 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="grid h-fit gap-5">
             <BuyerWantedCardView card={card} action={false} />
