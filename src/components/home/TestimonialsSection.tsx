@@ -28,7 +28,7 @@ const testimonials = [
   },
   {
     title: 'A smarter way to use our inventory.',
-    text: 'We could turn stock into buyer interest without relying only on standard listing behaviour.',
+    text: 'We could use our stock to reach interested buyers without relying only on standard listing behaviour.',
     role: 'Dealer',
   },
 ];
@@ -38,8 +38,8 @@ export function TestimonialsSection() {
     <section className="bg-white py-16">
       <Container>
         <div className="max-w-3xl">
-          <p className="text-sm font-black uppercase tracking-[0.16em] text-blue">Real outcomes</p>
-          <h2 className="mt-3 text-3xl font-black leading-tight text-navy sm:text-5xl">Why people like buying this way.</h2>
+          <p className="text-sm font-black uppercase tracking-[0.16em] text-blue">Why it works</p>
+          <h2 className="mt-3 text-3xl font-black leading-tight text-navy sm:text-5xl">Less searching. More serious replies.</h2>
           <p className="mt-4 text-lg leading-8 text-charcoal/70">
             Reverse Car Market helps buyers skip endless browsing and helps sellers connect with people already looking.
           </p>
@@ -52,7 +52,7 @@ export function TestimonialsSection() {
                 <span className="rounded-md bg-ice px-3 py-1 text-xs font-black text-charcoal/60">{item.role}</span>
                 <span className="h-2 w-2 rounded-full bg-blue" />
               </div>
-              <h3 className="mt-6 text-2xl font-black leading-tight text-navy">"{item.title}"</h3>
+              <h3 className="mt-6 text-2xl font-black leading-tight text-navy">{item.title}</h3>
               <p className="mt-4 text-sm font-semibold leading-7 text-charcoal/70">{item.text}</p>
             </article>
           ))}
